@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Symphony Database</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#0a0a0e;
+  --bg2:#121218;
+  --border:#252535;
+  --text:#c8cce0;
+  --text-dim:#606478;
+  --text-bright:#edf0fb;
+  --font-serif:'Georgia','Times New Roman',serif;
+  --font-sans:'Segoe UI',system-ui,sans-serif;
+}
+
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:var(--font-sans);font-size:15px;line-height:1.6;
+  min-height:100vh;display:flex;flex-direction:column;
+}
+
+/* ── Hero ─────────────────────────────────────────────────── */
+.hero{
+  text-align:center;
+  padding:5rem 2rem 4rem;
+  background:radial-gradient(ellipse 80% 60% at 50% 0%,#1a1a2e 0%,var(--bg) 70%);
+  flex:1;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:3rem;
+}
+
+.hero-title{
+  font-family:var(--font-serif);
+  font-size:clamp(1rem,2vw,1.1rem);
+  letter-spacing:0.35em;text-transform:uppercase;
+  color:var(--text-dim);margin-bottom:0.5rem;
+}
+.hero-heading{
+  font-family:var(--font-serif);
+  font-size:clamp(2.2rem,5vw,4rem);
+  font-weight:normal;
+  color:var(--text-bright);
+  letter-spacing:0.02em;
+  line-height:1.15;
+}
+.hero-sub{
+  color:var(--text-dim);font-size:0.9rem;margin-top:0.75rem;
+}
+
+/* ── Composer grid ────────────────────────────────────────── */
+.composers{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,380px));
+  gap:1.5rem;
+  justify-content:center;
+  width:100%;max-width:900px;
+}
+
+.composer-card{
+  position:relative;overflow:hidden;
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:2.5rem 2rem;
+  text-decoration:none;
+  color:inherit;
+  transition:transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.composer-card:hover{
+  transform:translateY(-4px);
+}
+
+/* Beethoven — warm amber glow */
+.composer-card.beethoven{--c:38;--s:60%}
+.composer-card.beethoven:hover{
+  border-color:hsla(38,60%,55%,0.5);
+  box-shadow:0 0 0 1px hsla(38,60%,55%,0.2),
+             0 16px 48px rgba(0,0,0,0.6),
+             0 0 60px hsla(38,60%,40%,0.12);
+}
+
+/* Mahler — cool blue-violet glow */
+.composer-card.mahler{--c:220;--s:55%}
+.composer-card.mahler:hover{
+  border-color:hsla(220,55%,60%,0.5);
+  box-shadow:0 0 0 1px hsla(220,55%,60%,0.2),
+             0 16px 48px rgba(0,0,0,0.6),
+             0 0 60px hsla(220,55%,40%,0.12);
+}
+
+.card-accent{
+  position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    hsla(var(--c),var(--s),60%,0.8) 40%,
+    hsla(calc(var(--c)+30),var(--s),60%,0.8) 60%,
+    transparent
+  );
+}
+.card-dates{
+  font-size:0.75rem;letter-spacing:0.1em;
+  color:hsla(var(--c),var(--s),65%,0.8);
+  text-transform:uppercase;margin-bottom:1rem;
+  font-weight:600;
+}
+.card-name{
+  font-family:var(--font-serif);
+  font-size:1.6rem;font-weight:normal;
+  color:var(--text-bright);
+  line-height:1.2;margin-bottom:0.35rem;
+}
+.card-descriptor{
+  font-size:0.82rem;color:var(--text-dim);
+  margin-bottom:1.8rem;font-style:italic;
+}
+.card-stats{
+  display:flex;gap:1.2rem;
+  flex-wrap:wrap;margin-bottom:2rem;
+}
+.stat{
+  display:flex;flex-direction:column;gap:0.1rem;
+}
+.stat-num{
+  font-size:1.5rem;font-weight:700;
+  color:hsla(var(--c),var(--s),65%,1);
+  font-variant-numeric:tabular-nums;
+  line-height:1;
+}
+.stat-label{font-size:0.7rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.08em}
+
+.card-cta{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  font-size:0.82rem;font-weight:600;
+  color:hsla(var(--c),var(--s),68%,1);
+  border:1px solid hsla(var(--c),var(--s),55%,0.35);
+  border-radius:8px;
+  padding:0.45rem 1rem;
+  background:hsla(var(--c),var(--s),50%,0.08);
+  transition:background 0.15s;
+}
+.composer-card:hover .card-cta{
+  background:hsla(var(--c),var(--s),50%,0.18);
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+.site-footer{
+  text-align:center;padding:1.5rem;
+  color:var(--text-dim);font-size:0.75rem;
+  border-top:1px solid var(--border);
+}
+</style>
+</head>
+<body>
+
+<main class="hero">
+  <div>
+    <p class="hero-title">Orchestral Reference Database</p>
+    <h1 class="hero-heading">Symphony<br>Catalogue</h1>
+    <p class="hero-sub">Instrumentation &amp; per-movement running times</p>
+  </div>
+
+  <div class="composers">
+
+    <a href="beethoven.html" class="composer-card beethoven">
+      <div class="card-accent"></div>
+      <div class="card-dates">1770 – 1827</div>
+      <div class="card-name">Ludwig van<br>Beethoven</div>
+      <div class="card-descriptor">Classical &amp; early Romantic</div>
+      <div class="card-stats">
+        <div class="stat">
+          <span class="stat-num">9</span>
+          <span class="stat-label">Symphonies</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">35</span>
+          <span class="stat-label">Movements</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">~6h</span>
+          <span class="stat-label">Total</span>
+        </div>
+      </div>
+      <span class="card-cta">View symphonies &#8594;</span>
+    </a>
+
+    <a href="mahler.html" class="composer-card mahler">
+      <div class="card-accent"></div>
+      <div class="card-dates">1860 – 1911</div>
+      <div class="card-name">Gustav<br>Mahler</div>
+      <div class="card-descriptor">Late Romantic &amp; post-Romantic</div>
+      <div class="card-stats">
+        <div class="stat">
+          <span class="stat-num">10</span>
+          <span class="stat-label">Symphonies</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">47</span>
+          <span class="stat-label">Movements</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">~12h</span>
+          <span class="stat-label">Total</span>
+        </div>
+      </div>
+      <span class="card-cta">View symphonies &#8594;</span>
+    </a>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  Running times are representative averages and vary by conductor and edition.
+</footer>
+
+</body>
+</html>

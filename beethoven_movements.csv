@@ -1,0 +1,38 @@
+symphony_no,opus,subtitle,key,movement_no,label,tempo_marking,duration_min,voices,notes
+1,Op. 21,,C major,1,,Adagio molto — Allegro con brio,10.0,,"Slow introduction famously begins on the dominant seventh of F, not C."
+1,Op. 21,,C major,2,,Andante cantabile con moto,8.0,,Quasi-scherzo in character; passes theme through all sections.
+1,Op. 21,,C major,3,,Menuetto: Allegro molto e vivace,4.0,,In tempo this is already a scherzo in all but name.
+1,Op. 21,,C major,4,,Finale: Adagio — Allegro molto e vivace,6.0,,Humorous ascending scale in the introduction.
+2,Op. 36,,D major,1,,Adagio molto — Allegro con brio,13.0,,Longest first movement Beethoven had written to this point.
+2,Op. 36,,D major,2,,Larghetto,12.0,,Song-form; one of Beethoven's most lyrical slow movements.
+2,Op. 36,,D major,3,,Scherzo: Allegro,4.0,,First symphony to label a movement 'Scherzo' explicitly.
+2,Op. 36,,D major,4,,Allegro molto,7.0,,Rondo with a famously abrupt ending.
+3,Op. 55,Eroica,E-flat major,1,,Allegro con brio,17.0,,Two hammer-blow E-flat chords open the movement. Development section twice as long as any previous symphony.
+3,Op. 55,Eroica,E-flat major,2,,Marcia funebre: Adagio assai,17.0,,C minor funeral march; one of the most celebrated slow movements in the repertoire.
+3,Op. 55,Eroica,E-flat major,3,,Scherzo: Allegro vivace,6.0,,Three horns prominently featured; fast and playful.
+3,Op. 55,Eroica,E-flat major,4,,Finale: Allegro molto,13.0,,Theme-and-variations on a melody also used in the 'Prometheus' ballet.
+4,Op. 60,,B-flat major,1,,Adagio — Allegro vivace,13.0,,"Long, mysterious slow introduction in B-flat minor before the Allegro."
+4,Op. 60,,B-flat major,2,,Adagio,10.0,,Lyrical; notable for the intricate accompaniment figure in the winds.
+4,Op. 60,,B-flat major,3,,Allegro vivace,6.0,,Trio section features a repeating bassoon figure.
+4,Op. 60,,B-flat major,4,,Allegro ma non troppo,8.0,,Perpetual-motion finale.
+5,Op. 67,,C minor,1,,Allegro con brio,7.0,,The 'fate motif' (short-short-short-long); entire movement derived from it.
+5,Op. 67,,C minor,2,,Andante con moto,10.0,,Double-variation form; two alternating themes.
+5,Op. 67,,C minor,3,,Allegro,6.0,,C minor scherzo; horn theme; leads directly into the finale (attacca).
+5,Op. 67,,C minor,4,,Allegro — Presto,9.0,,"C major triumph; first use of piccolo, contrabassoon, and trombones in a symphony. Scherzo theme briefly recurs mid-movement."
+6,Op. 68,Pastoral,F major,1,Awakening of cheerful feelings,Allegro ma non troppo,12.0,,Beethoven: 'More the expression of feeling than painting'.
+6,Op. 68,Pastoral,F major,2,Scene by the brook,Andante molto mosso,13.0,,"Flute = nightingale, oboe = quail, clarinets = cuckoo; birdsong cadenza at close."
+6,Op. 68,Pastoral,F major,3,Merry gathering of country folk,Allegro,5.0,,Interrupted by the thunderstorm; attacca into mvt 4.
+6,Op. 68,Pastoral,F major,4,Thunderstorm,Allegro,4.0,,Piccolo and trombones enter for the first and only time. Attacca into mvt 5.
+6,Op. 68,Pastoral,F major,5,Shepherd's song,Allegretto,10.0,,F major calm; clarinet-led 'ranz des vaches' theme.
+7,Op. 92,,A major,1,,Poco sostenuto — Vivace,14.0,,Massive 60-bar introduction; Vivace built on a dotted-rhythm ostinato.
+7,Op. 92,,A major,2,,Allegretto,9.0,,Funeral-march character; encored at the premiere. A minor → A major.
+7,Op. 92,,A major,3,,Presto,9.0,,F major; trio in D major repeated three times (unusual structure).
+7,Op. 92,,A major,4,,Allegro con brio,8.0,,Bacchanalian finale; driving rhythmic energy throughout.
+8,Op. 93,,F major,1,,Allegro vivace e con brio,10.0,,Compact sonata form; no slow introduction.
+8,Op. 93,,F major,2,,Allegretto scherzando,4.0,,Gentle staccato winds; thought to mimic Mälzel's metronome.
+8,Op. 93,,F major,3,,Tempo di Menuetto,5.0,,Old-fashioned minuet and trio — deliberate stylistic irony.
+8,Op. 93,,F major,4,,Allegro vivace,8.0,,Long rondo-sonata; famous dissonant C-sharp that generates a prolonged digression.
+9,Op. 125,Choral,D minor,1,,"Allegro ma non troppo, un poco maestoso",17.0,,D minor; opens from near-silence — bare fifths suggesting primordial emptiness.
+9,Op. 125,Choral,D minor,2,,Molto vivace (Scherzo),13.0,,Scherzo placed second; famous timpani solos; D minor.
+9,Op. 125,Choral,D minor,3,,Adagio molto e cantabile,16.0,,Two alternating themes; B-flat and D major. Serene and expansive.
+9,Op. 125,Choral,D minor,4,,Presto — Allegro assai (Finale),26.0,"Soprano, Mezzo-soprano, Tenor, Baritone, Mixed Chorus","Baritone recitative recalls themes of previous movements before 'Ode to Joy'. Schiller text set in multiple variations, fugue, and Turkish march episode."

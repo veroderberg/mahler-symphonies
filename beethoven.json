@@ -1,0 +1,1207 @@
+[
+  {
+    "id": 1,
+    "number": 1,
+    "key": "C major",
+    "subtitle": null,
+    "opus": "Op. 21",
+    "year_composed": "1795–1800",
+    "year_premiered": 1800,
+    "total_duration_min": 28.0,
+    "notes": "First performed at the Burgtheater, Vienna. Closest in spirit to Haydn and Mozart.",
+    "movements": [
+      {
+        "number": 1,
+        "label": null,
+        "tempo_marking": "Adagio molto — Allegro con brio",
+        "duration_min": 10.0,
+        "voices": null,
+        "notes": "Slow introduction famously begins on the dominant seventh of F, not C."
+      },
+      {
+        "number": 2,
+        "label": null,
+        "tempo_marking": "Andante cantabile con moto",
+        "duration_min": 8.0,
+        "voices": null,
+        "notes": "Quasi-scherzo in character; passes theme through all sections."
+      },
+      {
+        "number": 3,
+        "label": null,
+        "tempo_marking": "Menuetto: Allegro molto e vivace",
+        "duration_min": 4.0,
+        "voices": null,
+        "notes": "In tempo this is already a scherzo in all but name."
+      },
+      {
+        "number": 4,
+        "label": null,
+        "tempo_marking": "Finale: Adagio — Allegro molto e vivace",
+        "duration_min": 6.0,
+        "voices": null,
+        "notes": "Humorous ascending scale in the introduction."
+      }
+    ],
+    "instrumentation": [
+      {
+        "cat": "Woodwind",
+        "instrument": "Flute",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Oboe",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Clarinet",
+        "count": 2,
+        "notes": "in C and A"
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Bassoon",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Horn",
+        "count": 2,
+        "notes": "in C and F"
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Trumpet",
+        "count": 2,
+        "notes": "in C"
+      },
+      {
+        "cat": "Percussion",
+        "instrument": "Timpani",
+        "count": 1,
+        "notes": "in C and G"
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Violin I",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Violin II",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Viola",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Cello",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Double Bass",
+        "count": null,
+        "notes": null
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "number": 2,
+    "key": "D major",
+    "subtitle": null,
+    "opus": "Op. 36",
+    "year_composed": "1801–1802",
+    "year_premiered": 1803,
+    "total_duration_min": 36.0,
+    "notes": "Composed during the Heiligenstadt crisis. Despite personal anguish, the work is sunny and expansive.",
+    "movements": [
+      {
+        "number": 1,
+        "label": null,
+        "tempo_marking": "Adagio molto — Allegro con brio",
+        "duration_min": 13.0,
+        "voices": null,
+        "notes": "Longest first movement Beethoven had written to this point."
+      },
+      {
+        "number": 2,
+        "label": null,
+        "tempo_marking": "Larghetto",
+        "duration_min": 12.0,
+        "voices": null,
+        "notes": "Song-form; one of Beethoven's most lyrical slow movements."
+      },
+      {
+        "number": 3,
+        "label": null,
+        "tempo_marking": "Scherzo: Allegro",
+        "duration_min": 4.0,
+        "voices": null,
+        "notes": "First symphony to label a movement 'Scherzo' explicitly."
+      },
+      {
+        "number": 4,
+        "label": null,
+        "tempo_marking": "Allegro molto",
+        "duration_min": 7.0,
+        "voices": null,
+        "notes": "Rondo with a famously abrupt ending."
+      }
+    ],
+    "instrumentation": [
+      {
+        "cat": "Woodwind",
+        "instrument": "Flute",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Oboe",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Clarinet",
+        "count": 2,
+        "notes": "in A and B-flat"
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Bassoon",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Horn",
+        "count": 2,
+        "notes": "in D and E"
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Trumpet",
+        "count": 2,
+        "notes": "in D"
+      },
+      {
+        "cat": "Percussion",
+        "instrument": "Timpani",
+        "count": 1,
+        "notes": "in D and A"
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Violin I",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Violin II",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Viola",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Cello",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Double Bass",
+        "count": null,
+        "notes": null
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "number": 3,
+    "key": "E-flat major",
+    "subtitle": "Eroica",
+    "opus": "Op. 55",
+    "year_composed": "1803–1804",
+    "year_premiered": 1805,
+    "total_duration_min": 53.0,
+    "notes": "Originally dedicated to Napoleon; Beethoven erased the dedication on learning of the coronation. Transformative work — nearly doubled the symphony's scale. Three horns, groundbreaking at the time.",
+    "movements": [
+      {
+        "number": 1,
+        "label": null,
+        "tempo_marking": "Allegro con brio",
+        "duration_min": 17.0,
+        "voices": null,
+        "notes": "Two hammer-blow E-flat chords open the movement. Development section twice as long as any previous symphony."
+      },
+      {
+        "number": 2,
+        "label": null,
+        "tempo_marking": "Marcia funebre: Adagio assai",
+        "duration_min": 17.0,
+        "voices": null,
+        "notes": "C minor funeral march; one of the most celebrated slow movements in the repertoire."
+      },
+      {
+        "number": 3,
+        "label": null,
+        "tempo_marking": "Scherzo: Allegro vivace",
+        "duration_min": 6.0,
+        "voices": null,
+        "notes": "Three horns prominently featured; fast and playful."
+      },
+      {
+        "number": 4,
+        "label": null,
+        "tempo_marking": "Finale: Allegro molto",
+        "duration_min": 13.0,
+        "voices": null,
+        "notes": "Theme-and-variations on a melody also used in the 'Prometheus' ballet."
+      }
+    ],
+    "instrumentation": [
+      {
+        "cat": "Woodwind",
+        "instrument": "Flute",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Oboe",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Clarinet",
+        "count": 2,
+        "notes": "in B-flat and C"
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Bassoon",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Horn",
+        "count": 3,
+        "notes": "in E-flat; 3 horns — unprecedented at the time"
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Trumpet",
+        "count": 2,
+        "notes": "in E-flat"
+      },
+      {
+        "cat": "Percussion",
+        "instrument": "Timpani",
+        "count": 1,
+        "notes": "in E-flat and B-flat"
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Violin I",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Violin II",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Viola",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Cello",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Double Bass",
+        "count": null,
+        "notes": null
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "number": 4,
+    "key": "B-flat major",
+    "subtitle": null,
+    "opus": "Op. 60",
+    "year_composed": "1806",
+    "year_premiered": 1807,
+    "total_duration_min": 37.0,
+    "notes": "Composed rapidly; often overshadowed by its neighbours (3 and 5). Schumann called it 'a slender Greek maiden between two Norse giants'.",
+    "movements": [
+      {
+        "number": 1,
+        "label": null,
+        "tempo_marking": "Adagio — Allegro vivace",
+        "duration_min": 13.0,
+        "voices": null,
+        "notes": "Long, mysterious slow introduction in B-flat minor before the Allegro."
+      },
+      {
+        "number": 2,
+        "label": null,
+        "tempo_marking": "Adagio",
+        "duration_min": 10.0,
+        "voices": null,
+        "notes": "Lyrical; notable for the intricate accompaniment figure in the winds."
+      },
+      {
+        "number": 3,
+        "label": null,
+        "tempo_marking": "Allegro vivace",
+        "duration_min": 6.0,
+        "voices": null,
+        "notes": "Trio section features a repeating bassoon figure."
+      },
+      {
+        "number": 4,
+        "label": null,
+        "tempo_marking": "Allegro ma non troppo",
+        "duration_min": 8.0,
+        "voices": null,
+        "notes": "Perpetual-motion finale."
+      }
+    ],
+    "instrumentation": [
+      {
+        "cat": "Woodwind",
+        "instrument": "Flute",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Oboe",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Clarinet",
+        "count": 2,
+        "notes": "in B-flat and A"
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Bassoon",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Horn",
+        "count": 2,
+        "notes": "in B-flat and E-flat"
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Trumpet",
+        "count": 2,
+        "notes": "in B-flat"
+      },
+      {
+        "cat": "Percussion",
+        "instrument": "Timpani",
+        "count": 1,
+        "notes": "in B-flat and F"
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Violin I",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Violin II",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Viola",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Cello",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Double Bass",
+        "count": null,
+        "notes": null
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "number": 5,
+    "key": "C minor",
+    "subtitle": null,
+    "opus": "Op. 67",
+    "year_composed": "1804–1808",
+    "year_premiered": 1808,
+    "total_duration_min": 32.0,
+    "notes": "First use of piccolo, contrabassoon, and trombones in a symphony (finale only). The famous four-note motif pervades all four movements.",
+    "movements": [
+      {
+        "number": 1,
+        "label": null,
+        "tempo_marking": "Allegro con brio",
+        "duration_min": 7.0,
+        "voices": null,
+        "notes": "The 'fate motif' (short-short-short-long); entire movement derived from it."
+      },
+      {
+        "number": 2,
+        "label": null,
+        "tempo_marking": "Andante con moto",
+        "duration_min": 10.0,
+        "voices": null,
+        "notes": "Double-variation form; two alternating themes."
+      },
+      {
+        "number": 3,
+        "label": null,
+        "tempo_marking": "Allegro",
+        "duration_min": 6.0,
+        "voices": null,
+        "notes": "C minor scherzo; horn theme; leads directly into the finale (attacca)."
+      },
+      {
+        "number": 4,
+        "label": null,
+        "tempo_marking": "Allegro — Presto",
+        "duration_min": 9.0,
+        "voices": null,
+        "notes": "C major triumph; first use of piccolo, contrabassoon, and trombones in a symphony. Scherzo theme briefly recurs mid-movement."
+      }
+    ],
+    "instrumentation": [
+      {
+        "cat": "Woodwind",
+        "instrument": "Piccolo",
+        "count": 1,
+        "notes": "finale only (mvt 4)"
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Flute",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Oboe",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Clarinet",
+        "count": 2,
+        "notes": "in C and B-flat"
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Bassoon",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Contrabassoon",
+        "count": 1,
+        "notes": "finale only (mvt 4)"
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Horn",
+        "count": 2,
+        "notes": "in E-flat and C"
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Trumpet",
+        "count": 2,
+        "notes": "in C"
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Alto Trombone",
+        "count": 1,
+        "notes": "finale only (mvt 4)"
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Tenor Trombone",
+        "count": 1,
+        "notes": "finale only (mvt 4)"
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Bass Trombone",
+        "count": 1,
+        "notes": "finale only (mvt 4)"
+      },
+      {
+        "cat": "Percussion",
+        "instrument": "Timpani",
+        "count": 1,
+        "notes": "in C and G"
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Violin I",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Violin II",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Viola",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Cello",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Double Bass",
+        "count": null,
+        "notes": null
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "number": 6,
+    "key": "F major",
+    "subtitle": "Pastoral",
+    "opus": "Op. 68",
+    "year_composed": "1803–1808",
+    "year_premiered": 1808,
+    "total_duration_min": 44.0,
+    "notes": "Five movements; Beethoven's only programmatic symphony. Premiered on the same concert as the Fifth. Piccolo and two trombones enter in the storm (mvt 4).",
+    "movements": [
+      {
+        "number": 1,
+        "label": "Awakening of cheerful feelings",
+        "tempo_marking": "Allegro ma non troppo",
+        "duration_min": 12.0,
+        "voices": null,
+        "notes": "Beethoven: 'More the expression of feeling than painting'."
+      },
+      {
+        "number": 2,
+        "label": "Scene by the brook",
+        "tempo_marking": "Andante molto mosso",
+        "duration_min": 13.0,
+        "voices": null,
+        "notes": "Flute = nightingale, oboe = quail, clarinets = cuckoo; birdsong cadenza at close."
+      },
+      {
+        "number": 3,
+        "label": "Merry gathering of country folk",
+        "tempo_marking": "Allegro",
+        "duration_min": 5.0,
+        "voices": null,
+        "notes": "Interrupted by the thunderstorm; attacca into mvt 4."
+      },
+      {
+        "number": 4,
+        "label": "Thunderstorm",
+        "tempo_marking": "Allegro",
+        "duration_min": 4.0,
+        "voices": null,
+        "notes": "Piccolo and trombones enter for the first and only time. Attacca into mvt 5."
+      },
+      {
+        "number": 5,
+        "label": "Shepherd's song",
+        "tempo_marking": "Allegretto",
+        "duration_min": 10.0,
+        "voices": null,
+        "notes": "F major calm; clarinet-led 'ranz des vaches' theme."
+      }
+    ],
+    "instrumentation": [
+      {
+        "cat": "Woodwind",
+        "instrument": "Piccolo",
+        "count": 1,
+        "notes": "mvts 4–5 only (storm & finale)"
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Flute",
+        "count": 2,
+        "notes": "flute = nightingale in mvt 2"
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Oboe",
+        "count": 2,
+        "notes": "oboe = quail in mvt 2"
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Clarinet",
+        "count": 2,
+        "notes": "clarinets = cuckoo in mvt 2"
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Bassoon",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Horn",
+        "count": 2,
+        "notes": "in F and B-flat"
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Trumpet",
+        "count": 2,
+        "notes": "in C and F"
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Tenor Trombone",
+        "count": 1,
+        "notes": "mvts 4–5 only"
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Bass Trombone",
+        "count": 1,
+        "notes": "mvts 4–5 only"
+      },
+      {
+        "cat": "Percussion",
+        "instrument": "Timpani",
+        "count": 1,
+        "notes": "in F and C"
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Violin I",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Violin II",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Viola",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Cello",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Double Bass",
+        "count": null,
+        "notes": null
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "number": 7,
+    "key": "A major",
+    "subtitle": null,
+    "opus": "Op. 92",
+    "year_composed": "1811–1812",
+    "year_premiered": 1813,
+    "total_duration_min": 40.0,
+    "notes": "Wagner called it 'the apotheosis of the dance'. The Allegretto (mvt 2) was encored at the premiere.",
+    "movements": [
+      {
+        "number": 1,
+        "label": null,
+        "tempo_marking": "Poco sostenuto — Vivace",
+        "duration_min": 14.0,
+        "voices": null,
+        "notes": "Massive 60-bar introduction; Vivace built on a dotted-rhythm ostinato."
+      },
+      {
+        "number": 2,
+        "label": null,
+        "tempo_marking": "Allegretto",
+        "duration_min": 9.0,
+        "voices": null,
+        "notes": "Funeral-march character; encored at the premiere. A minor → A major."
+      },
+      {
+        "number": 3,
+        "label": null,
+        "tempo_marking": "Presto",
+        "duration_min": 9.0,
+        "voices": null,
+        "notes": "F major; trio in D major repeated three times (unusual structure)."
+      },
+      {
+        "number": 4,
+        "label": null,
+        "tempo_marking": "Allegro con brio",
+        "duration_min": 8.0,
+        "voices": null,
+        "notes": "Bacchanalian finale; driving rhythmic energy throughout."
+      }
+    ],
+    "instrumentation": [
+      {
+        "cat": "Woodwind",
+        "instrument": "Flute",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Oboe",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Clarinet",
+        "count": 2,
+        "notes": "in A and C"
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Bassoon",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Horn",
+        "count": 2,
+        "notes": "in A and E"
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Trumpet",
+        "count": 2,
+        "notes": "in D and A"
+      },
+      {
+        "cat": "Percussion",
+        "instrument": "Timpani",
+        "count": 1,
+        "notes": "in A and E"
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Violin I",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Violin II",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Viola",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Cello",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Double Bass",
+        "count": null,
+        "notes": null
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "number": 8,
+    "key": "F major",
+    "subtitle": null,
+    "opus": "Op. 93",
+    "year_composed": "1812",
+    "year_premiered": 1814,
+    "total_duration_min": 27.0,
+    "notes": "Compact and witty; Beethoven's shortest symphony. Beethoven reportedly preferred it to the Seventh.",
+    "movements": [
+      {
+        "number": 1,
+        "label": null,
+        "tempo_marking": "Allegro vivace e con brio",
+        "duration_min": 10.0,
+        "voices": null,
+        "notes": "Compact sonata form; no slow introduction."
+      },
+      {
+        "number": 2,
+        "label": null,
+        "tempo_marking": "Allegretto scherzando",
+        "duration_min": 4.0,
+        "voices": null,
+        "notes": "Gentle staccato winds; thought to mimic Mälzel's metronome."
+      },
+      {
+        "number": 3,
+        "label": null,
+        "tempo_marking": "Tempo di Menuetto",
+        "duration_min": 5.0,
+        "voices": null,
+        "notes": "Old-fashioned minuet and trio — deliberate stylistic irony."
+      },
+      {
+        "number": 4,
+        "label": null,
+        "tempo_marking": "Allegro vivace",
+        "duration_min": 8.0,
+        "voices": null,
+        "notes": "Long rondo-sonata; famous dissonant C-sharp that generates a prolonged digression."
+      }
+    ],
+    "instrumentation": [
+      {
+        "cat": "Woodwind",
+        "instrument": "Flute",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Oboe",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Clarinet",
+        "count": 2,
+        "notes": "in F and B-flat"
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Bassoon",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Horn",
+        "count": 2,
+        "notes": "in F and B-flat"
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Trumpet",
+        "count": 2,
+        "notes": "in F"
+      },
+      {
+        "cat": "Percussion",
+        "instrument": "Timpani",
+        "count": 1,
+        "notes": "in F and C"
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Violin I",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Violin II",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Viola",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Cello",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Double Bass",
+        "count": null,
+        "notes": null
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "number": 9,
+    "key": "D minor",
+    "subtitle": "Choral",
+    "opus": "Op. 125",
+    "year_composed": "1817–1824",
+    "year_premiered": 1824,
+    "total_duration_min": 72.0,
+    "notes": "Beethoven was completely deaf at the premiere. First major symphony to incorporate a full chorus and vocal soloists. Finale is a setting of Schiller's 'Ode to Joy'.",
+    "movements": [
+      {
+        "number": 1,
+        "label": null,
+        "tempo_marking": "Allegro ma non troppo, un poco maestoso",
+        "duration_min": 17.0,
+        "voices": null,
+        "notes": "D minor; opens from near-silence — bare fifths suggesting primordial emptiness."
+      },
+      {
+        "number": 2,
+        "label": null,
+        "tempo_marking": "Molto vivace (Scherzo)",
+        "duration_min": 13.0,
+        "voices": null,
+        "notes": "Scherzo placed second; famous timpani solos; D minor."
+      },
+      {
+        "number": 3,
+        "label": null,
+        "tempo_marking": "Adagio molto e cantabile",
+        "duration_min": 16.0,
+        "voices": null,
+        "notes": "Two alternating themes; B-flat and D major. Serene and expansive."
+      },
+      {
+        "number": 4,
+        "label": null,
+        "tempo_marking": "Presto — Allegro assai (Finale)",
+        "duration_min": 26.0,
+        "voices": "Soprano, Mezzo-soprano, Tenor, Baritone, Mixed Chorus",
+        "notes": "Baritone recitative recalls themes of previous movements before 'Ode to Joy'. Schiller text set in multiple variations, fugue, and Turkish march episode."
+      }
+    ],
+    "instrumentation": [
+      {
+        "cat": "Woodwind",
+        "instrument": "Piccolo",
+        "count": 1,
+        "notes": "finale only (mvt 4)"
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Flute",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Oboe",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Clarinet",
+        "count": 2,
+        "notes": "in A, B-flat, and D"
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Bassoon",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "cat": "Woodwind",
+        "instrument": "Contrabassoon",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Horn",
+        "count": 4,
+        "notes": "in D and B-flat"
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Trumpet",
+        "count": 2,
+        "notes": "in D and B-flat"
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Alto Trombone",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Tenor Trombone",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "cat": "Brass",
+        "instrument": "Bass Trombone",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "cat": "Percussion",
+        "instrument": "Timpani",
+        "count": 1,
+        "notes": "2 players (mvt 2 — requires two timpanists)"
+      },
+      {
+        "cat": "Percussion",
+        "instrument": "Bass Drum",
+        "count": 1,
+        "notes": "finale"
+      },
+      {
+        "cat": "Percussion",
+        "instrument": "Cymbals",
+        "count": 1,
+        "notes": "finale"
+      },
+      {
+        "cat": "Percussion",
+        "instrument": "Triangle",
+        "count": 1,
+        "notes": "finale"
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Violin I",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Violin II",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Viola",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Cello",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Strings",
+        "instrument": "Double Bass",
+        "count": null,
+        "notes": null
+      },
+      {
+        "cat": "Voice",
+        "instrument": "Soprano",
+        "count": 1,
+        "notes": "soloist (mvt 4)"
+      },
+      {
+        "cat": "Voice",
+        "instrument": "Mezzo-soprano",
+        "count": 1,
+        "notes": "soloist (mvt 4)"
+      },
+      {
+        "cat": "Voice",
+        "instrument": "Tenor",
+        "count": 1,
+        "notes": "soloist (mvt 4)"
+      },
+      {
+        "cat": "Voice",
+        "instrument": "Baritone",
+        "count": 1,
+        "notes": "soloist (mvt 4)"
+      },
+      {
+        "cat": "Voice",
+        "instrument": "Mixed Chorus",
+        "count": 1,
+        "notes": "SATB (mvt 4)"
+      }
+    ]
+  }
+]

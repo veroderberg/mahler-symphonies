@@ -1,0 +1,130 @@
+symphony_no,category,instrument,count,notes
+1,Woodwind,Flute,2,
+1,Woodwind,Oboe,2,
+1,Woodwind,Clarinet,2,in C and A
+1,Woodwind,Bassoon,2,
+1,Brass,Horn,2,in C and F
+1,Brass,Trumpet,2,in C
+1,Percussion,Timpani,1,in C and G
+1,Strings,Violin I,,
+1,Strings,Violin II,,
+1,Strings,Viola,,
+1,Strings,Cello,,
+1,Strings,Double Bass,,
+2,Woodwind,Flute,2,
+2,Woodwind,Oboe,2,
+2,Woodwind,Clarinet,2,in A and B-flat
+2,Woodwind,Bassoon,2,
+2,Brass,Horn,2,in D and E
+2,Brass,Trumpet,2,in D
+2,Percussion,Timpani,1,in D and A
+2,Strings,Violin I,,
+2,Strings,Violin II,,
+2,Strings,Viola,,
+2,Strings,Cello,,
+2,Strings,Double Bass,,
+3,Woodwind,Flute,2,
+3,Woodwind,Oboe,2,
+3,Woodwind,Clarinet,2,in B-flat and C
+3,Woodwind,Bassoon,2,
+3,Brass,Horn,3,in E-flat; 3 horns — unprecedented at the time
+3,Brass,Trumpet,2,in E-flat
+3,Percussion,Timpani,1,in E-flat and B-flat
+3,Strings,Violin I,,
+3,Strings,Violin II,,
+3,Strings,Viola,,
+3,Strings,Cello,,
+3,Strings,Double Bass,,
+4,Woodwind,Flute,2,
+4,Woodwind,Oboe,2,
+4,Woodwind,Clarinet,2,in B-flat and A
+4,Woodwind,Bassoon,2,
+4,Brass,Horn,2,in B-flat and E-flat
+4,Brass,Trumpet,2,in B-flat
+4,Percussion,Timpani,1,in B-flat and F
+4,Strings,Violin I,,
+4,Strings,Violin II,,
+4,Strings,Viola,,
+4,Strings,Cello,,
+4,Strings,Double Bass,,
+5,Woodwind,Piccolo,1,finale only (mvt 4)
+5,Woodwind,Flute,2,
+5,Woodwind,Oboe,2,
+5,Woodwind,Clarinet,2,in C and B-flat
+5,Woodwind,Bassoon,2,
+5,Woodwind,Contrabassoon,1,finale only (mvt 4)
+5,Brass,Horn,2,in E-flat and C
+5,Brass,Trumpet,2,in C
+5,Brass,Alto Trombone,1,finale only (mvt 4)
+5,Brass,Tenor Trombone,1,finale only (mvt 4)
+5,Brass,Bass Trombone,1,finale only (mvt 4)
+5,Percussion,Timpani,1,in C and G
+5,Strings,Violin I,,
+5,Strings,Violin II,,
+5,Strings,Viola,,
+5,Strings,Cello,,
+5,Strings,Double Bass,,
+6,Woodwind,Piccolo,1,mvts 4–5 only (storm & finale)
+6,Woodwind,Flute,2,flute = nightingale in mvt 2
+6,Woodwind,Oboe,2,oboe = quail in mvt 2
+6,Woodwind,Clarinet,2,clarinets = cuckoo in mvt 2
+6,Woodwind,Bassoon,2,
+6,Brass,Horn,2,in F and B-flat
+6,Brass,Trumpet,2,in C and F
+6,Brass,Tenor Trombone,1,mvts 4–5 only
+6,Brass,Bass Trombone,1,mvts 4–5 only
+6,Percussion,Timpani,1,in F and C
+6,Strings,Violin I,,
+6,Strings,Violin II,,
+6,Strings,Viola,,
+6,Strings,Cello,,
+6,Strings,Double Bass,,
+7,Woodwind,Flute,2,
+7,Woodwind,Oboe,2,
+7,Woodwind,Clarinet,2,in A and C
+7,Woodwind,Bassoon,2,
+7,Brass,Horn,2,in A and E
+7,Brass,Trumpet,2,in D and A
+7,Percussion,Timpani,1,in A and E
+7,Strings,Violin I,,
+7,Strings,Violin II,,
+7,Strings,Viola,,
+7,Strings,Cello,,
+7,Strings,Double Bass,,
+8,Woodwind,Flute,2,
+8,Woodwind,Oboe,2,
+8,Woodwind,Clarinet,2,in F and B-flat
+8,Woodwind,Bassoon,2,
+8,Brass,Horn,2,in F and B-flat
+8,Brass,Trumpet,2,in F
+8,Percussion,Timpani,1,in F and C
+8,Strings,Violin I,,
+8,Strings,Violin II,,
+8,Strings,Viola,,
+8,Strings,Cello,,
+8,Strings,Double Bass,,
+9,Woodwind,Piccolo,1,finale only (mvt 4)
+9,Woodwind,Flute,2,
+9,Woodwind,Oboe,2,
+9,Woodwind,Clarinet,2,"in A, B-flat, and D"
+9,Woodwind,Bassoon,2,
+9,Woodwind,Contrabassoon,1,
+9,Brass,Horn,4,in D and B-flat
+9,Brass,Trumpet,2,in D and B-flat
+9,Brass,Alto Trombone,1,
+9,Brass,Tenor Trombone,1,
+9,Brass,Bass Trombone,1,
+9,Percussion,Timpani,1,2 players (mvt 2 — requires two timpanists)
+9,Percussion,Bass Drum,1,finale
+9,Percussion,Cymbals,1,finale
+9,Percussion,Triangle,1,finale
+9,Strings,Violin I,,
+9,Strings,Violin II,,
+9,Strings,Viola,,
+9,Strings,Cello,,
+9,Strings,Double Bass,,
+9,Voice,Soprano,1,soloist (mvt 4)
+9,Voice,Mezzo-soprano,1,soloist (mvt 4)
+9,Voice,Tenor,1,soloist (mvt 4)
+9,Voice,Baritone,1,soloist (mvt 4)
+9,Voice,Mixed Chorus,1,SATB (mvt 4)

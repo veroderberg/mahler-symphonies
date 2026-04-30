@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ludwig van Beethoven — Complete Symphonies</title>
+<style>
+/* ── Reset ─────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root {
+  /* Warm parchment-dark palette — distinct from Mahler's cool steel */
+  --bg:          #0d0a06;
+  --bg2:         #161009;
+  --bg3:         #20180e;
+  --border:      #362a18;
+  --text:        #e2d4b8;
+  --text-dim:    #8a7255;
+  --text-bright: #f5ead2;
+  --accent:      #d4901c;
+  --radius:      12px;
+  --font-serif:  'Georgia','Times New Roman',serif;
+  --font-sans:   'Segoe UI',system-ui,sans-serif;
+}
+
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-sans);font-size:14px;line-height:1.6}
+
+/* ── Nav ────────────────────────────────────────────────────── */
+.site-nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(13,10,6,0.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:1rem;
+  padding:0.55rem 2rem;
+}
+.site-nav .brand{
+  font-family:var(--font-serif);font-size:1rem;
+  color:var(--accent);white-space:nowrap;margin-right:auto;
+}
+.site-nav a{
+  color:var(--text-dim);text-decoration:none;font-size:0.85rem;
+  font-weight:600;padding:0.25rem 0.5rem;border-radius:6px;
+  transition:background 0.15s,color 0.15s;
+}
+.site-nav a:hover{background:var(--bg3);color:var(--accent)}
+.site-nav .back-link{
+  font-size:0.8rem;color:var(--text-dim);
+  border:1px solid var(--border);border-radius:6px;
+  padding:0.2rem 0.6rem;margin-left:auto;
+}
+.site-nav .back-link:hover{background:var(--bg3);color:var(--accent)}
+
+/* ── Hero ───────────────────────────────────────────────────── */
+.page-hero{
+  text-align:center;
+  padding:4rem 1rem 3rem;
+  background:linear-gradient(180deg,#1a1006 0%,var(--bg) 100%);
+}
+.page-hero h1{
+  font-family:var(--font-serif);
+  font-size:clamp(1.8rem,4vw,3.2rem);
+  color:var(--text-bright);
+  letter-spacing:0.04em;
+}
+.page-hero h1 span{
+  display:block;font-size:0.45em;font-weight:normal;
+  color:var(--accent);letter-spacing:0.2em;
+  text-transform:uppercase;margin-bottom:0.5rem;
+}
+.page-hero p{color:var(--text-dim);margin-top:0.75rem;font-size:0.9rem}
+
+/* ── Decorative score line ──────────────────────────────────── */
+.score-line{
+  display:flex;align-items:center;justify-content:center;
+  gap:1.5rem;padding:1.5rem 2rem;
+  color:var(--text-dim);font-size:1.6rem;letter-spacing:0.4em;
+  opacity:0.3;
+}
+
+/* ── Container ──────────────────────────────────────────────── */
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem 4rem}
+
+/* ── Card ───────────────────────────────────────────────────── */
+.sym-card{
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  margin-bottom:2.5rem;
+  overflow:hidden;
+  transition:box-shadow 0.2s;
+}
+.sym-card:hover{
+  box-shadow:0 0 0 1px hsla(var(--hue),55%,50%,0.4),
+             0 8px 32px rgba(0,0,0,0.55);
+}
+.sym-header{
+  display:flex;align-items:center;gap:1.5rem;
+  padding:1.4rem 1.8rem;
+  background:linear-gradient(
+    135deg,
+    color-mix(in oklch, hsl(var(--hue),35%,18%) 100%, #1a1006 0%) 0%,
+    color-mix(in oklch, hsl(var(--hue),20%,10%) 100%, #0d0a06 0%) 100%
+  );
+  border-bottom:1px solid var(--border);
+}
+.sym-numeral{
+  font-family:var(--font-serif);
+  font-size:2.8rem;font-weight:normal;line-height:1;
+  color:hsla(var(--hue),65%,70%,1);
+  min-width:4.5rem;text-align:center;
+  text-shadow:0 0 20px hsla(var(--hue),60%,50%,0.3);
+}
+.sym-meta h2{
+  font-family:var(--font-serif);font-size:1.25rem;
+  font-weight:normal;color:var(--text-bright);margin-bottom:0.45rem;
+}
+.in-key{color:var(--text-dim);font-size:0.95em}
+.subtitle{color:hsla(var(--hue),65%,70%,1);font-style:italic;font-size:0.95em}
+.sym-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+.tag{
+  font-size:0.78rem;padding:0.2rem 0.6rem;border-radius:20px;
+  background:rgba(255,255,255,0.06);color:var(--text-dim);
+  border:1px solid rgba(255,255,255,0.08);
+}
+.opus-tag{
+  color:var(--accent);
+  border-color:rgba(212,144,28,0.35);
+  background:rgba(212,144,28,0.08);
+  font-weight:600;
+}
+.total-time{
+  color:#c8b870;
+  border-color:rgba(200,184,112,0.3);
+  background:rgba(200,184,112,0.07);
+}
+.sym-note{
+  font-size:0.82rem;color:var(--text-dim);
+  padding:0.7rem 1.8rem;
+  border-bottom:1px solid var(--border);
+  background:rgba(0,0,0,0.2);font-style:italic;
+}
+
+/* ── Body layout ────────────────────────────────────────────── */
+.sym-body{display:grid;grid-template-columns:1fr 1.35fr}
+@media(max-width:760px){.sym-body{grid-template-columns:1fr}}
+.panel{padding:1.4rem 1.8rem}
+.movements-panel{border-right:1px solid var(--border)}
+@media(max-width:760px){
+  .movements-panel{border-right:none;border-bottom:1px solid var(--border)}
+}
+.panel-title{
+  font-size:0.7rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:0.12em;color:var(--text-dim);
+  margin-bottom:1rem;padding-bottom:0.4rem;
+  border-bottom:1px solid var(--border);
+}
+
+/* ── Movement table ─────────────────────────────────────────── */
+.mvt-table{width:100%;border-collapse:collapse}
+.mvt-table tr:hover td{background:rgba(255,255,255,0.03)}
+.mvt-table td{
+  padding:0.45rem 0.3rem;vertical-align:top;
+  border-bottom:1px solid rgba(255,255,255,0.04);
+}
+.mvt-table tr:last-child td{border-bottom:none}
+.mvt-num{
+  font-variant-numeric:tabular-nums;color:var(--text-dim);
+  font-size:0.78rem;white-space:nowrap;padding-right:0.6rem;padding-top:0.55rem;
+}
+.mvt-tempo{font-size:0.83rem;color:var(--text);padding-right:0.8rem}
+.mvt-label{font-style:italic;color:var(--accent);font-size:0.78rem}
+.mvt-voices{font-size:0.72rem;color:var(--text-dim);margin-top:0.15rem;font-style:italic}
+.mvt-dur{
+  font-variant-numeric:tabular-nums;color:var(--text-bright);
+  font-size:0.82rem;white-space:nowrap;text-align:right;
+  padding-right:0.6rem;padding-top:0.55rem;
+}
+.mvt-bar-cell{width:110px;vertical-align:middle;padding-top:0.55rem}
+.mvt-bar{
+  height:5px;border-radius:0;  /* flat bars — different from Mahler's rounded */
+  min-width:4px;
+}
+
+/* ── Instrumentation ────────────────────────────────────────── */
+.inst-group{
+  margin-bottom:0.85rem;display:flex;
+  flex-wrap:wrap;align-items:baseline;gap:0.3rem 0.5rem;
+}
+.inst-cat{
+  font-size:0.68rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:0.1em;min-width:5.5rem;flex-shrink:0;
+}
+.pills{display:flex;flex-wrap:wrap;gap:0.3rem}
+.pill{
+  font-size:0.75rem;padding:0.18rem 0.5rem;
+  border-radius:3px;  /* square corners — distinct from Mahler's pill shape */
+  background:rgba(255,255,255,0.05);
+  border-left:2px solid var(--pill-color);
+  color:color-mix(in srgb,var(--pill-color) 85%,white);
+  cursor:default;transition:background 0.15s;
+}
+.pill:hover{background:color-mix(in srgb,var(--pill-color) 18%,transparent)}
+.pill em{font-style:normal;opacity:0.65;font-size:0.9em;margin-left:0.15rem}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+.site-footer{
+  text-align:center;padding:2rem 1rem;
+  color:var(--text-dim);font-size:0.78rem;
+  border-top:1px solid var(--border);
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <span class="brand">Beethoven · Complete Symphonies</span>
+  <a href="#sym1">I</a> <a href="#sym2">II</a> <a href="#sym3">III</a> <a href="#sym4">IV</a> <a href="#sym5">V</a> <a href="#sym6">VI</a> <a href="#sym7">VII</a> <a href="#sym8">VIII</a> <a href="#sym9">IX</a>
+  <a class="back-link" href="index.html">&#8592; All Composers</a>
+</nav>
+
+<div class="page-hero">
+  <h1>
+    <span>Ludwig van Beethoven · 1770 – 1827</span>
+    Complete Symphonies
+  </h1>
+  <p>Instrumentation &amp; movement running times &middot; 9 symphonies &middot; approx. durations based on standard performances</p>
+</div>
+
+<div class="score-line" aria-hidden="true">
+  &#9834; &nbsp; &#9833; &nbsp; &#9835; &nbsp; &#9834; &nbsp; &#9833; &nbsp; &#9835; &nbsp; &#9834;
+</div>
+
+<div class="container">
+
+  <section class="sym-card" id="sym1" style="--hue:0">
+    <header class="sym-header">
+      <div class="sym-numeral">I</div>
+      <div class="sym-meta">
+        <h2>Symphony No.&nbsp;1 <span class="in-key">in C major</span>
+          </h2>
+        <div class="sym-tags">
+          <span class="tag opus-tag">Op. 21</span>
+          <span class="tag">&#9836; 1795–1800</span>
+          <span class="tag">Premiere: 1800</span>
+          <span class="tag total-time">Total: 28′</span>
+        </div>
+      </div>
+    </header>
+    <p class="sym-note">First performed at the Burgtheater, Vienna. Closest in spirit to Haydn and Mozart.</p>
+    <div class="sym-body">
+      <div class="panel movements-panel">
+        <h3 class="panel-title">Movements</h3>
+        <table class="mvt-table"><tbody>
+        <tr title="Slow introduction famously begins on the dominant seventh of F, not C.">
+          <td class="mvt-num">I.1</td>
+          <td class="mvt-tempo">Adagio molto — Allegro con brio</td>
+          <td class="mvt-dur">10′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:100%; background:hsla(0,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="Quasi-scherzo in character; passes theme through all sections.">
+          <td class="mvt-num">I.2</td>
+          <td class="mvt-tempo">Andante cantabile con moto</td>
+          <td class="mvt-dur">8′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:80%; background:hsla(0,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="In tempo this is already a scherzo in all but name.">
+          <td class="mvt-num">I.3</td>
+          <td class="mvt-tempo">Menuetto: Allegro molto e vivace</td>
+          <td class="mvt-dur">4′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:40%; background:hsla(0,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="Humorous ascending scale in the introduction.">
+          <td class="mvt-num">I.4</td>
+          <td class="mvt-tempo">Finale: Adagio — Allegro molto e vivace</td>
+          <td class="mvt-dur">6′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:60%; background:hsla(0,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        </tbody></table>
+      </div>
+      <div class="panel inst-panel">
+        <h3 class="panel-title">Instrumentation</h3>
+        
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#6bba80">Woodwind</span>
+          <div class="pills"><span class="pill" style="--pill-color:#6bba80">Flute <em>×2</em></span><span class="pill" style="--pill-color:#6bba80">Oboe <em>×2</em></span><span class="pill" style="--pill-color:#6bba80" title="in C and A">Clarinet <em>×2</em></span><span class="pill" style="--pill-color:#6bba80">Bassoon <em>×2</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#d4841a">Brass</span>
+          <div class="pills"><span class="pill" style="--pill-color:#d4841a" title="in C and F">Horn <em>×2</em></span><span class="pill" style="--pill-color:#d4841a" title="in C">Trumpet <em>×2</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#b85040">Percussion</span>
+          <div class="pills"><span class="pill" style="--pill-color:#b85040" title="in C and G">Timpani <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#90b840">Strings</span>
+          <div class="pills"><span class="pill" style="--pill-color:#90b840">Violin I</span><span class="pill" style="--pill-color:#90b840">Violin II</span><span class="pill" style="--pill-color:#90b840">Viola</span><span class="pill" style="--pill-color:#90b840">Cello</span><span class="pill" style="--pill-color:#90b840">Double Bass</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sym-card" id="sym2" style="--hue:40">
+    <header class="sym-header">
+      <div class="sym-numeral">II</div>
+      <div class="sym-meta">
+        <h2>Symphony No.&nbsp;2 <span class="in-key">in D major</span>
+          </h2>
+        <div class="sym-tags">
+          <span class="tag opus-tag">Op. 36</span>
+          <span class="tag">&#9836; 1801–1802</span>
+          <span class="tag">Premiere: 1803</span>
+          <span class="tag total-time">Total: 36′</span>
+        </div>
+      </div>
+    </header>
+    <p class="sym-note">Composed during the Heiligenstadt crisis. Despite personal anguish, the work is sunny and expansive.</p>
+    <div class="sym-body">
+      <div class="panel movements-panel">
+        <h3 class="panel-title">Movements</h3>
+        <table class="mvt-table"><tbody>
+        <tr title="Longest first movement Beethoven had written to this point.">
+          <td class="mvt-num">II.1</td>
+          <td class="mvt-tempo">Adagio molto — Allegro con brio</td>
+          <td class="mvt-dur">13′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:100%; background:hsla(40,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="Song-form; one of Beethoven's most lyrical slow movements.">
+          <td class="mvt-num">II.2</td>
+          <td class="mvt-tempo">Larghetto</td>
+          <td class="mvt-dur">12′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:92%; background:hsla(40,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="First symphony to label a movement 'Scherzo' explicitly.">
+          <td class="mvt-num">II.3</td>
+          <td class="mvt-tempo">Scherzo: Allegro</td>
+          <td class="mvt-dur">4′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:30%; background:hsla(40,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="Rondo with a famously abrupt ending.">
+          <td class="mvt-num">II.4</td>
+          <td class="mvt-tempo">Allegro molto</td>
+          <td class="mvt-dur">7′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:53%; background:hsla(40,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        </tbody></table>
+      </div>
+      <div class="panel inst-panel">
+        <h3 class="panel-title">Instrumentation</h3>
+        
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#6bba80">Woodwind</span>
+          <div class="pills"><span class="pill" style="--pill-color:#6bba80">Flute <em>×2</em></span><span class="pill" style="--pill-color:#6bba80">Oboe <em>×2</em></span><span class="pill" style="--pill-color:#6bba80" title="in A and B-flat">Clarinet <em>×2</em></span><span class="pill" style="--pill-color:#6bba80">Bassoon <em>×2</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#d4841a">Brass</span>
+          <div class="pills"><span class="pill" style="--pill-color:#d4841a" title="in D and E">Horn <em>×2</em></span><span class="pill" style="--pill-color:#d4841a" title="in D">Trumpet <em>×2</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#b85040">Percussion</span>
+          <div class="pills"><span class="pill" style="--pill-color:#b85040" title="in D and A">Timpani <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#90b840">Strings</span>
+          <div class="pills"><span class="pill" style="--pill-color:#90b840">Violin I</span><span class="pill" style="--pill-color:#90b840">Violin II</span><span class="pill" style="--pill-color:#90b840">Viola</span><span class="pill" style="--pill-color:#90b840">Cello</span><span class="pill" style="--pill-color:#90b840">Double Bass</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sym-card" id="sym3" style="--hue:160">
+    <header class="sym-header">
+      <div class="sym-numeral">III</div>
+      <div class="sym-meta">
+        <h2>Symphony No.&nbsp;3 <span class="in-key">in E-flat major</span>
+          <span class="subtitle">"Eroica"</span></h2>
+        <div class="sym-tags">
+          <span class="tag opus-tag">Op. 55</span>
+          <span class="tag">&#9836; 1803–1804</span>
+          <span class="tag">Premiere: 1805</span>
+          <span class="tag total-time">Total: 53′</span>
+        </div>
+      </div>
+    </header>
+    <p class="sym-note">Originally dedicated to Napoleon; Beethoven erased the dedication on learning of the coronation. Transformative work — nearly doubled the symphony's scale. Three horns, groundbreaking at the time.</p>
+    <div class="sym-body">
+      <div class="panel movements-panel">
+        <h3 class="panel-title">Movements</h3>
+        <table class="mvt-table"><tbody>
+        <tr title="Two hammer-blow E-flat chords open the movement. Development section twice as long as any previous symphony.">
+          <td class="mvt-num">III.1</td>
+          <td class="mvt-tempo">Allegro con brio</td>
+          <td class="mvt-dur">17′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:100%; background:hsla(160,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="C minor funeral march; one of the most celebrated slow movements in the repertoire.">
+          <td class="mvt-num">III.2</td>
+          <td class="mvt-tempo">Marcia funebre: Adagio assai</td>
+          <td class="mvt-dur">17′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:100%; background:hsla(160,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="Three horns prominently featured; fast and playful.">
+          <td class="mvt-num">III.3</td>
+          <td class="mvt-tempo">Scherzo: Allegro vivace</td>
+          <td class="mvt-dur">6′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:35%; background:hsla(160,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="Theme-and-variations on a melody also used in the 'Prometheus' ballet.">
+          <td class="mvt-num">III.4</td>
+          <td class="mvt-tempo">Finale: Allegro molto</td>
+          <td class="mvt-dur">13′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:76%; background:hsla(160,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        </tbody></table>
+      </div>
+      <div class="panel inst-panel">
+        <h3 class="panel-title">Instrumentation</h3>
+        
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#6bba80">Woodwind</span>
+          <div class="pills"><span class="pill" style="--pill-color:#6bba80">Flute <em>×2</em></span><span class="pill" style="--pill-color:#6bba80">Oboe <em>×2</em></span><span class="pill" style="--pill-color:#6bba80" title="in B-flat and C">Clarinet <em>×2</em></span><span class="pill" style="--pill-color:#6bba80">Bassoon <em>×2</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#d4841a">Brass</span>
+          <div class="pills"><span class="pill" style="--pill-color:#d4841a" title="in E-flat; 3 horns — unprecedented at the time">Horn <em>×3</em></span><span class="pill" style="--pill-color:#d4841a" title="in E-flat">Trumpet <em>×2</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#b85040">Percussion</span>
+          <div class="pills"><span class="pill" style="--pill-color:#b85040" title="in E-flat and B-flat">Timpani <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#90b840">Strings</span>
+          <div class="pills"><span class="pill" style="--pill-color:#90b840">Violin I</span><span class="pill" style="--pill-color:#90b840">Violin II</span><span class="pill" style="--pill-color:#90b840">Viola</span><span class="pill" style="--pill-color:#90b840">Cello</span><span class="pill" style="--pill-color:#90b840">Double Bass</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sym-card" id="sym4" style="--hue:200">
+    <header class="sym-header">
+      <div class="sym-numeral">IV</div>
+      <div class="sym-meta">
+        <h2>Symphony No.&nbsp;4 <span class="in-key">in B-flat major</span>
+          </h2>
+        <div class="sym-tags">
+          <span class="tag opus-tag">Op. 60</span>
+          <span class="tag">&#9836; 1806</span>
+          <span class="tag">Premiere: 1807</span>
+          <span class="tag total-time">Total: 37′</span>
+        </div>
+      </div>
+    </header>
+    <p class="sym-note">Composed rapidly; often overshadowed by its neighbours (3 and 5). Schumann called it 'a slender Greek maiden between two Norse giants'.</p>
+    <div class="sym-body">
+      <div class="panel movements-panel">
+        <h3 class="panel-title">Movements</h3>
+        <table class="mvt-table"><tbody>
+        <tr title="Long, mysterious slow introduction in B-flat minor before the Allegro.">
+          <td class="mvt-num">IV.1</td>
+          <td class="mvt-tempo">Adagio — Allegro vivace</td>
+          <td class="mvt-dur">13′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:100%; background:hsla(200,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="Lyrical; notable for the intricate accompaniment figure in the winds.">
+          <td class="mvt-num">IV.2</td>
+          <td class="mvt-tempo">Adagio</td>
+          <td class="mvt-dur">10′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:76%; background:hsla(200,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="Trio section features a repeating bassoon figure.">
+          <td class="mvt-num">IV.3</td>
+          <td class="mvt-tempo">Allegro vivace</td>
+          <td class="mvt-dur">6′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:46%; background:hsla(200,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="Perpetual-motion finale.">
+          <td class="mvt-num">IV.4</td>
+          <td class="mvt-tempo">Allegro ma non troppo</td>
+          <td class="mvt-dur">8′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:61%; background:hsla(200,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        </tbody></table>
+      </div>
+      <div class="panel inst-panel">
+        <h3 class="panel-title">Instrumentation</h3>
+        
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#6bba80">Woodwind</span>
+          <div class="pills"><span class="pill" style="--pill-color:#6bba80">Flute <em>×2</em></span><span class="pill" style="--pill-color:#6bba80">Oboe <em>×2</em></span><span class="pill" style="--pill-color:#6bba80" title="in B-flat and A">Clarinet <em>×2</em></span><span class="pill" style="--pill-color:#6bba80">Bassoon <em>×2</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#d4841a">Brass</span>
+          <div class="pills"><span class="pill" style="--pill-color:#d4841a" title="in B-flat and E-flat">Horn <em>×2</em></span><span class="pill" style="--pill-color:#d4841a" title="in B-flat">Trumpet <em>×2</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#b85040">Percussion</span>
+          <div class="pills"><span class="pill" style="--pill-color:#b85040" title="in B-flat and F">Timpani <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#90b840">Strings</span>
+          <div class="pills"><span class="pill" style="--pill-color:#90b840">Violin I</span><span class="pill" style="--pill-color:#90b840">Violin II</span><span class="pill" style="--pill-color:#90b840">Viola</span><span class="pill" style="--pill-color:#90b840">Cello</span><span class="pill" style="--pill-color:#90b840">Double Bass</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sym-card" id="sym5" style="--hue:320">
+    <header class="sym-header">
+      <div class="sym-numeral">V</div>
+      <div class="sym-meta">
+        <h2>Symphony No.&nbsp;5 <span class="in-key">in C minor</span>
+          </h2>
+        <div class="sym-tags">
+          <span class="tag opus-tag">Op. 67</span>
+          <span class="tag">&#9836; 1804–1808</span>
+          <span class="tag">Premiere: 1808</span>
+          <span class="tag total-time">Total: 32′</span>
+        </div>
+      </div>
+    </header>
+    <p class="sym-note">First use of piccolo, contrabassoon, and trombones in a symphony (finale only). The famous four-note motif pervades all four movements.</p>
+    <div class="sym-body">
+      <div class="panel movements-panel">
+        <h3 class="panel-title">Movements</h3>
+        <table class="mvt-table"><tbody>
+        <tr title="The 'fate motif' (short-short-short-long); entire movement derived from it.">
+          <td class="mvt-num">V.1</td>
+          <td class="mvt-tempo">Allegro con brio</td>
+          <td class="mvt-dur">7′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:70%; background:hsla(320,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="Double-variation form; two alternating themes.">
+          <td class="mvt-num">V.2</td>
+          <td class="mvt-tempo">Andante con moto</td>
+          <td class="mvt-dur">10′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:100%; background:hsla(320,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="C minor scherzo; horn theme; leads directly into the finale (attacca).">
+          <td class="mvt-num">V.3</td>
+          <td class="mvt-tempo">Allegro</td>
+          <td class="mvt-dur">6′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:60%; background:hsla(320,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="C major triumph; first use of piccolo, contrabassoon, and trombones in a symphony. Scherzo theme briefly recurs mid-movement.">
+          <td class="mvt-num">V.4</td>
+          <td class="mvt-tempo">Allegro — Presto</td>
+          <td class="mvt-dur">9′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:90%; background:hsla(320,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        </tbody></table>
+      </div>
+      <div class="panel inst-panel">
+        <h3 class="panel-title">Instrumentation</h3>
+        
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#6bba80">Woodwind</span>
+          <div class="pills"><span class="pill" style="--pill-color:#6bba80" title="finale only (mvt 4)">Piccolo <em>×1</em></span><span class="pill" style="--pill-color:#6bba80">Flute <em>×2</em></span><span class="pill" style="--pill-color:#6bba80">Oboe <em>×2</em></span><span class="pill" style="--pill-color:#6bba80" title="in C and B-flat">Clarinet <em>×2</em></span><span class="pill" style="--pill-color:#6bba80">Bassoon <em>×2</em></span><span class="pill" style="--pill-color:#6bba80" title="finale only (mvt 4)">Contrabassoon <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#d4841a">Brass</span>
+          <div class="pills"><span class="pill" style="--pill-color:#d4841a" title="in E-flat and C">Horn <em>×2</em></span><span class="pill" style="--pill-color:#d4841a" title="in C">Trumpet <em>×2</em></span><span class="pill" style="--pill-color:#d4841a" title="finale only (mvt 4)">Alto Trombone <em>×1</em></span><span class="pill" style="--pill-color:#d4841a" title="finale only (mvt 4)">Tenor Trombone <em>×1</em></span><span class="pill" style="--pill-color:#d4841a" title="finale only (mvt 4)">Bass Trombone <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#b85040">Percussion</span>
+          <div class="pills"><span class="pill" style="--pill-color:#b85040" title="in C and G">Timpani <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#90b840">Strings</span>
+          <div class="pills"><span class="pill" style="--pill-color:#90b840">Violin I</span><span class="pill" style="--pill-color:#90b840">Violin II</span><span class="pill" style="--pill-color:#90b840">Viola</span><span class="pill" style="--pill-color:#90b840">Cello</span><span class="pill" style="--pill-color:#90b840">Double Bass</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sym-card" id="sym6" style="--hue:90">
+    <header class="sym-header">
+      <div class="sym-numeral">VI</div>
+      <div class="sym-meta">
+        <h2>Symphony No.&nbsp;6 <span class="in-key">in F major</span>
+          <span class="subtitle">"Pastoral"</span></h2>
+        <div class="sym-tags">
+          <span class="tag opus-tag">Op. 68</span>
+          <span class="tag">&#9836; 1803–1808</span>
+          <span class="tag">Premiere: 1808</span>
+          <span class="tag total-time">Total: 44′</span>
+        </div>
+      </div>
+    </header>
+    <p class="sym-note">Five movements; Beethoven's only programmatic symphony. Premiered on the same concert as the Fifth. Piccolo and two trombones enter in the storm (mvt 4).</p>
+    <div class="sym-body">
+      <div class="panel movements-panel">
+        <h3 class="panel-title">Movements</h3>
+        <table class="mvt-table"><tbody>
+        <tr title="Beethoven: 'More the expression of feeling than painting'.">
+          <td class="mvt-num">VI.1</td>
+          <td class="mvt-tempo"><span class="mvt-label">Awakening of cheerful feelings</span> Allegro ma non troppo</td>
+          <td class="mvt-dur">12′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:92%; background:hsla(90,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="Flute = nightingale, oboe = quail, clarinets = cuckoo; birdsong cadenza at close.">
+          <td class="mvt-num">VI.2</td>
+          <td class="mvt-tempo"><span class="mvt-label">Scene by the brook</span> Andante molto mosso</td>
+          <td class="mvt-dur">13′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:100%; background:hsla(90,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="Interrupted by the thunderstorm; attacca into mvt 4.">
+          <td class="mvt-num">VI.3</td>
+          <td class="mvt-tempo"><span class="mvt-label">Merry gathering of country folk</span> Allegro</td>
+          <td class="mvt-dur">5′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:38%; background:hsla(90,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="Piccolo and trombones enter for the first and only time. Attacca into mvt 5.">
+          <td class="mvt-num">VI.4</td>
+          <td class="mvt-tempo"><span class="mvt-label">Thunderstorm</span> Allegro</td>
+          <td class="mvt-dur">4′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:30%; background:hsla(90,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="F major calm; clarinet-led 'ranz des vaches' theme.">
+          <td class="mvt-num">VI.5</td>
+          <td class="mvt-tempo"><span class="mvt-label">Shepherd's song</span> Allegretto</td>
+          <td class="mvt-dur">10′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:76%; background:hsla(90,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        </tbody></table>
+      </div>
+      <div class="panel inst-panel">
+        <h3 class="panel-title">Instrumentation</h3>
+        
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#6bba80">Woodwind</span>
+          <div class="pills"><span class="pill" style="--pill-color:#6bba80" title="mvts 4–5 only (storm & finale)">Piccolo <em>×1</em></span><span class="pill" style="--pill-color:#6bba80" title="flute = nightingale in mvt 2">Flute <em>×2</em></span><span class="pill" style="--pill-color:#6bba80" title="oboe = quail in mvt 2">Oboe <em>×2</em></span><span class="pill" style="--pill-color:#6bba80" title="clarinets = cuckoo in mvt 2">Clarinet <em>×2</em></span><span class="pill" style="--pill-color:#6bba80">Bassoon <em>×2</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#d4841a">Brass</span>
+          <div class="pills"><span class="pill" style="--pill-color:#d4841a" title="in F and B-flat">Horn <em>×2</em></span><span class="pill" style="--pill-color:#d4841a" title="in C and F">Trumpet <em>×2</em></span><span class="pill" style="--pill-color:#d4841a" title="mvts 4–5 only">Tenor Trombone <em>×1</em></span><span class="pill" style="--pill-color:#d4841a" title="mvts 4–5 only">Bass Trombone <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#b85040">Percussion</span>
+          <div class="pills"><span class="pill" style="--pill-color:#b85040" title="in F and C">Timpani <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#90b840">Strings</span>
+          <div class="pills"><span class="pill" style="--pill-color:#90b840">Violin I</span><span class="pill" style="--pill-color:#90b840">Violin II</span><span class="pill" style="--pill-color:#90b840">Viola</span><span class="pill" style="--pill-color:#90b840">Cello</span><span class="pill" style="--pill-color:#90b840">Double Bass</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sym-card" id="sym7" style="--hue:30">
+    <header class="sym-header">
+      <div class="sym-numeral">VII</div>
+      <div class="sym-meta">
+        <h2>Symphony No.&nbsp;7 <span class="in-key">in A major</span>
+          </h2>
+        <div class="sym-tags">
+          <span class="tag opus-tag">Op. 92</span>
+          <span class="tag">&#9836; 1811–1812</span>
+          <span class="tag">Premiere: 1813</span>
+          <span class="tag total-time">Total: 40′</span>
+        </div>
+      </div>
+    </header>
+    <p class="sym-note">Wagner called it 'the apotheosis of the dance'. The Allegretto (mvt 2) was encored at the premiere.</p>
+    <div class="sym-body">
+      <div class="panel movements-panel">
+        <h3 class="panel-title">Movements</h3>
+        <table class="mvt-table"><tbody>
+        <tr title="Massive 60-bar introduction; Vivace built on a dotted-rhythm ostinato.">
+          <td class="mvt-num">VII.1</td>
+          <td class="mvt-tempo">Poco sostenuto — Vivace</td>
+          <td class="mvt-dur">14′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:100%; background:hsla(30,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="Funeral-march character; encored at the premiere. A minor → A major.">
+          <td class="mvt-num">VII.2</td>
+          <td class="mvt-tempo">Allegretto</td>
+          <td class="mvt-dur">9′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:64%; background:hsla(30,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="F major; trio in D major repeated three times (unusual structure).">
+          <td class="mvt-num">VII.3</td>
+          <td class="mvt-tempo">Presto</td>
+          <td class="mvt-dur">9′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:64%; background:hsla(30,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="Bacchanalian finale; driving rhythmic energy throughout.">
+          <td class="mvt-num">VII.4</td>
+          <td class="mvt-tempo">Allegro con brio</td>
+          <td class="mvt-dur">8′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:57%; background:hsla(30,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        </tbody></table>
+      </div>
+      <div class="panel inst-panel">
+        <h3 class="panel-title">Instrumentation</h3>
+        
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#6bba80">Woodwind</span>
+          <div class="pills"><span class="pill" style="--pill-color:#6bba80">Flute <em>×2</em></span><span class="pill" style="--pill-color:#6bba80">Oboe <em>×2</em></span><span class="pill" style="--pill-color:#6bba80" title="in A and C">Clarinet <em>×2</em></span><span class="pill" style="--pill-color:#6bba80">Bassoon <em>×2</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#d4841a">Brass</span>
+          <div class="pills"><span class="pill" style="--pill-color:#d4841a" title="in A and E">Horn <em>×2</em></span><span class="pill" style="--pill-color:#d4841a" title="in D and A">Trumpet <em>×2</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#b85040">Percussion</span>
+          <div class="pills"><span class="pill" style="--pill-color:#b85040" title="in A and E">Timpani <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#90b840">Strings</span>
+          <div class="pills"><span class="pill" style="--pill-color:#90b840">Violin I</span><span class="pill" style="--pill-color:#90b840">Violin II</span><span class="pill" style="--pill-color:#90b840">Viola</span><span class="pill" style="--pill-color:#90b840">Cello</span><span class="pill" style="--pill-color:#90b840">Double Bass</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sym-card" id="sym8" style="--hue:90">
+    <header class="sym-header">
+      <div class="sym-numeral">VIII</div>
+      <div class="sym-meta">
+        <h2>Symphony No.&nbsp;8 <span class="in-key">in F major</span>
+          </h2>
+        <div class="sym-tags">
+          <span class="tag opus-tag">Op. 93</span>
+          <span class="tag">&#9836; 1812</span>
+          <span class="tag">Premiere: 1814</span>
+          <span class="tag total-time">Total: 27′</span>
+        </div>
+      </div>
+    </header>
+    <p class="sym-note">Compact and witty; Beethoven's shortest symphony. Beethoven reportedly preferred it to the Seventh.</p>
+    <div class="sym-body">
+      <div class="panel movements-panel">
+        <h3 class="panel-title">Movements</h3>
+        <table class="mvt-table"><tbody>
+        <tr title="Compact sonata form; no slow introduction.">
+          <td class="mvt-num">VIII.1</td>
+          <td class="mvt-tempo">Allegro vivace e con brio</td>
+          <td class="mvt-dur">10′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:100%; background:hsla(90,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="Gentle staccato winds; thought to mimic Mälzel's metronome.">
+          <td class="mvt-num">VIII.2</td>
+          <td class="mvt-tempo">Allegretto scherzando</td>
+          <td class="mvt-dur">4′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:40%; background:hsla(90,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="Old-fashioned minuet and trio — deliberate stylistic irony.">
+          <td class="mvt-num">VIII.3</td>
+          <td class="mvt-tempo">Tempo di Menuetto</td>
+          <td class="mvt-dur">5′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:50%; background:hsla(90,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="Long rondo-sonata; famous dissonant C-sharp that generates a prolonged digression.">
+          <td class="mvt-num">VIII.4</td>
+          <td class="mvt-tempo">Allegro vivace</td>
+          <td class="mvt-dur">8′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:80%; background:hsla(90,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        </tbody></table>
+      </div>
+      <div class="panel inst-panel">
+        <h3 class="panel-title">Instrumentation</h3>
+        
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#6bba80">Woodwind</span>
+          <div class="pills"><span class="pill" style="--pill-color:#6bba80">Flute <em>×2</em></span><span class="pill" style="--pill-color:#6bba80">Oboe <em>×2</em></span><span class="pill" style="--pill-color:#6bba80" title="in F and B-flat">Clarinet <em>×2</em></span><span class="pill" style="--pill-color:#6bba80">Bassoon <em>×2</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#d4841a">Brass</span>
+          <div class="pills"><span class="pill" style="--pill-color:#d4841a" title="in F and B-flat">Horn <em>×2</em></span><span class="pill" style="--pill-color:#d4841a" title="in F">Trumpet <em>×2</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#b85040">Percussion</span>
+          <div class="pills"><span class="pill" style="--pill-color:#b85040" title="in F and C">Timpani <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#90b840">Strings</span>
+          <div class="pills"><span class="pill" style="--pill-color:#90b840">Violin I</span><span class="pill" style="--pill-color:#90b840">Violin II</span><span class="pill" style="--pill-color:#90b840">Viola</span><span class="pill" style="--pill-color:#90b840">Cello</span><span class="pill" style="--pill-color:#90b840">Double Bass</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sym-card" id="sym9" style="--hue:260">
+    <header class="sym-header">
+      <div class="sym-numeral">IX</div>
+      <div class="sym-meta">
+        <h2>Symphony No.&nbsp;9 <span class="in-key">in D minor</span>
+          <span class="subtitle">"Choral"</span></h2>
+        <div class="sym-tags">
+          <span class="tag opus-tag">Op. 125</span>
+          <span class="tag">&#9836; 1817–1824</span>
+          <span class="tag">Premiere: 1824</span>
+          <span class="tag total-time">Total: 72′</span>
+        </div>
+      </div>
+    </header>
+    <p class="sym-note">Beethoven was completely deaf at the premiere. First major symphony to incorporate a full chorus and vocal soloists. Finale is a setting of Schiller's 'Ode to Joy'.</p>
+    <div class="sym-body">
+      <div class="panel movements-panel">
+        <h3 class="panel-title">Movements</h3>
+        <table class="mvt-table"><tbody>
+        <tr title="D minor; opens from near-silence — bare fifths suggesting primordial emptiness.">
+          <td class="mvt-num">IX.1</td>
+          <td class="mvt-tempo">Allegro ma non troppo, un poco maestoso</td>
+          <td class="mvt-dur">17′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:65%; background:hsla(260,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="Scherzo placed second; famous timpani solos; D minor.">
+          <td class="mvt-num">IX.2</td>
+          <td class="mvt-tempo">Molto vivace (Scherzo)</td>
+          <td class="mvt-dur">13′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:50%; background:hsla(260,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="Two alternating themes; B-flat and D major. Serene and expansive.">
+          <td class="mvt-num">IX.3</td>
+          <td class="mvt-tempo">Adagio molto e cantabile</td>
+          <td class="mvt-dur">16′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:61%; background:hsla(260,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        <tr title="Baritone recitative recalls themes of previous movements before 'Ode to Joy'. Schiller text set in multiple variations, fugue, and Turkish march episode.">
+          <td class="mvt-num">IX.4</td>
+          <td class="mvt-tempo">Presto — Allegro assai (Finale)<div class="mvt-voices">Soprano, Mezzo-soprano, Tenor, Baritone, Mixed Chorus</div></td>
+          <td class="mvt-dur">26′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:100%; background:hsla(260,55%,55%,0.7)"></div>
+          </td>
+        </tr>
+        </tbody></table>
+      </div>
+      <div class="panel inst-panel">
+        <h3 class="panel-title">Instrumentation</h3>
+        
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#6bba80">Woodwind</span>
+          <div class="pills"><span class="pill" style="--pill-color:#6bba80" title="finale only (mvt 4)">Piccolo <em>×1</em></span><span class="pill" style="--pill-color:#6bba80">Flute <em>×2</em></span><span class="pill" style="--pill-color:#6bba80">Oboe <em>×2</em></span><span class="pill" style="--pill-color:#6bba80" title="in A, B-flat, and D">Clarinet <em>×2</em></span><span class="pill" style="--pill-color:#6bba80">Bassoon <em>×2</em></span><span class="pill" style="--pill-color:#6bba80">Contrabassoon <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#d4841a">Brass</span>
+          <div class="pills"><span class="pill" style="--pill-color:#d4841a" title="in D and B-flat">Horn <em>×4</em></span><span class="pill" style="--pill-color:#d4841a" title="in D and B-flat">Trumpet <em>×2</em></span><span class="pill" style="--pill-color:#d4841a">Alto Trombone <em>×1</em></span><span class="pill" style="--pill-color:#d4841a">Tenor Trombone <em>×1</em></span><span class="pill" style="--pill-color:#d4841a">Bass Trombone <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#b85040">Percussion</span>
+          <div class="pills"><span class="pill" style="--pill-color:#b85040" title="2 players (mvt 2 — requires two timpanists)">Timpani <em>×1</em></span><span class="pill" style="--pill-color:#b85040" title="finale">Bass Drum <em>×1</em></span><span class="pill" style="--pill-color:#b85040" title="finale">Cymbals <em>×1</em></span><span class="pill" style="--pill-color:#b85040" title="finale">Triangle <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#90b840">Strings</span>
+          <div class="pills"><span class="pill" style="--pill-color:#90b840">Violin I</span><span class="pill" style="--pill-color:#90b840">Violin II</span><span class="pill" style="--pill-color:#90b840">Viola</span><span class="pill" style="--pill-color:#90b840">Cello</span><span class="pill" style="--pill-color:#90b840">Double Bass</span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#b870a0">Voice</span>
+          <div class="pills"><span class="pill" style="--pill-color:#b870a0" title="soloist (mvt 4)">Soprano <em>×1</em></span><span class="pill" style="--pill-color:#b870a0" title="soloist (mvt 4)">Mezzo-soprano <em>×1</em></span><span class="pill" style="--pill-color:#b870a0" title="soloist (mvt 4)">Tenor <em>×1</em></span><span class="pill" style="--pill-color:#b870a0" title="soloist (mvt 4)">Baritone <em>×1</em></span><span class="pill" style="--pill-color:#b870a0" title="SATB (mvt 4)">Mixed Chorus <em>×1</em></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  Running times are representative averages and vary by conductor.
+  Instrumentation notes reflect forces at first publication unless otherwise stated.
+  Hover movements for additional notes.
+</footer>
+
+</body>
+</html>
