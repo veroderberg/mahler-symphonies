@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gustav Mahler — Complete Symphonies</title>
+<style>
+/* ── Reset & base ──────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #0f1117;
+  --bg2:       #171b26;
+  --bg3:       #1e2334;
+  --border:    #2c3250;
+  --text:      #d4d8e8;
+  --text-dim:  #7a82a0;
+  --text-bright: #edf0fb;
+  --accent:    #c4a84a;
+  --radius:    12px;
+  --font-serif: 'Georgia', 'Times New Roman', serif;
+  --font-sans:  'Segoe UI', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ── Top nav ───────────────────────────────────────────────── */
+.site-nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(15,17,23,0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 1rem;
+  padding: 0.55rem 2rem;
+}
+.site-nav .brand {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--accent);
+  white-space: nowrap;
+  margin-right: auto;
+}
+.site-nav a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+}
+.site-nav a:hover {
+  background: var(--bg3);
+  color: var(--accent);
+}
+
+/* ── Page header ───────────────────────────────────────────── */
+.page-hero {
+  text-align: center;
+  padding: 4rem 1rem 3rem;
+  background: linear-gradient(180deg, #12192e 0%, var(--bg) 100%);
+}
+.page-hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  color: var(--text-bright);
+  letter-spacing: 0.05em;
+}
+.page-hero h1 span {
+  display: block;
+  font-size: 0.45em;
+  font-weight: normal;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.page-hero p {
+  color: var(--text-dim);
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+
+/* ── Container ─────────────────────────────────────────────── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* ── Symphony card ─────────────────────────────────────────── */
+.sym-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.sym-card:hover {
+  box-shadow: 0 0 0 1px hsla(var(--hue),60%,55%,0.35),
+              0 8px 32px rgba(0,0,0,0.5);
+}
+
+.sym-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.4rem 1.8rem;
+  background: linear-gradient(
+    135deg,
+    hsla(var(--hue),45%,18%,1) 0%,
+    hsla(var(--hue),30%,12%,1) 100%
+  );
+  border-bottom: 1px solid var(--border);
+}
+
+.sym-numeral {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: normal;
+  color: hsla(var(--hue),70%,72%,1);
+  min-width: 4rem;
+  text-align: center;
+  line-height: 1;
+  opacity: 0.9;
+}
+
+.sym-meta h2 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: normal;
+  color: var(--text-bright);
+  margin-bottom: 0.45rem;
+}
+.sym-meta .in-key {
+  color: var(--text-dim);
+  font-size: 0.95em;
+}
+.subtitle {
+  color: hsla(var(--hue),70%,72%,1);
+  font-style: italic;
+  font-size: 0.95em;
+}
+
+.sym-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.tag {
+  font-size: 0.78rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.07);
+  color: var(--text-dim);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.total-time {
+  color: var(--accent);
+  border-color: rgba(196,168,74,0.3);
+  background: rgba(196,168,74,0.08);
+}
+
+.sym-note {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  padding: 0.7rem 1.8rem;
+  border-bottom: 1px solid var(--border);
+  background: rgba(0,0,0,0.15);
+  font-style: italic;
+}
+
+/* ── Body two-column ───────────────────────────────────────── */
+.sym-body {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 0;
+}
+@media (max-width: 760px) {
+  .sym-body { grid-template-columns: 1fr; }
+}
+
+.panel {
+  padding: 1.4rem 1.8rem;
+}
+.movements-panel {
+  border-right: 1px solid var(--border);
+}
+@media (max-width: 760px) {
+  .movements-panel { border-right: none; border-bottom: 1px solid var(--border); }
+}
+
+.panel-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Movement table ────────────────────────────────────────── */
+.mvt-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.mvt-table tr {
+  cursor: default;
+}
+.mvt-table tr:hover td {
+  background: rgba(255,255,255,0.03);
+}
+.mvt-table td {
+  padding: 0.45rem 0.3rem;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.mvt-table tr:last-child td { border-bottom: none; }
+
+.mvt-num {
+  font-variant-numeric: tabular-nums;
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  white-space: nowrap;
+  padding-right: 0.6rem;
+  padding-top: 0.55rem;
+}
+.mvt-tempo {
+  font-size: 0.83rem;
+  color: var(--text);
+  padding-right: 0.8rem;
+}
+.mvt-label {
+  font-style: italic;
+  color: var(--accent);
+  font-size: 0.78rem;
+}
+.mvt-voices {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  margin-top: 0.15rem;
+  font-style: italic;
+}
+.mvt-dur {
+  font-variant-numeric: tabular-nums;
+  color: var(--text-bright);
+  font-size: 0.82rem;
+  white-space: nowrap;
+  text-align: right;
+  padding-right: 0.6rem;
+  padding-top: 0.55rem;
+}
+.mvt-bar-cell {
+  width: 120px;
+  vertical-align: middle;
+  padding-top: 0.55rem;
+}
+.mvt-bar {
+  height: 6px;
+  border-radius: 3px;
+  background: hsla(var(--hue),55%,52%,0.65);
+  min-width: 4px;
+  transition: width 0.3s;
+}
+
+/* ── Instrumentation pills ─────────────────────────────────── */
+.inst-group {
+  margin-bottom: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3rem 0.5rem;
+}
+.inst-cat {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  min-width: 5.5rem;
+  flex-shrink: 0;
+}
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.pill {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid color-mix(in srgb, var(--pill-color) 40%, transparent);
+  color: color-mix(in srgb, var(--pill-color) 90%, white);
+  cursor: default;
+  transition: background 0.15s;
+}
+.pill:hover {
+  background: color-mix(in srgb, var(--pill-color) 20%, transparent);
+}
+.pill em {
+  font-style: normal;
+  opacity: 0.7;
+  font-size: 0.9em;
+  margin-left: 0.15rem;
+}
+
+/* ── Footer ────────────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  border-top: 1px solid var(--border);
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <span class="brand">Mahler · Complete Symphonies</span>
+  <a href="#sym1">I</a> <a href="#sym2">II</a> <a href="#sym3">III</a> <a href="#sym4">IV</a> <a href="#sym5">V</a> <a href="#sym6">VI</a> <a href="#sym7">VII</a> <a href="#sym8">VIII</a> <a href="#sym9">IX</a> <a href="#sym10">X</a>
+</nav>
+
+<div class="page-hero">
+  <h1>
+    <span>Gustav Mahler · 1860 – 1911</span>
+    Complete Symphonies
+  </h1>
+  <p>Instrumentation &amp; movement running times &middot; 10 symphonies &middot; approx. durations based on standard performances</p>
+</div>
+
+<div class="container">
+
+  <section class="sym-card" id="sym1" style="--hue:0">
+    <header class="sym-header">
+      <div class="sym-numeral">I</div>
+      <div class="sym-meta">
+        <h2>Symphony No.&nbsp;1 <span class="in-key">in D major</span>
+          <span class="subtitle">"Titan"</span></h2>
+        <div class="sym-tags">
+          <span class="tag">&#9836; 1887–1888, rev. 1893–96</span>
+          <span class='tag'>Premiere: 1889</span>
+          <span class="tag total-time">Total: 54′</span>
+        </div>
+      </div>
+    </header>
+
+    <p class="sym-note">Originally 5 movements; Mahler removed 'Blumine' (2nd mvt) in 1894.</p>
+
+    <div class="sym-body">
+      <div class="panel movements-panel">
+        <h3 class="panel-title">Movements</h3>
+        <table class="mvt-table">
+          <tbody>
+        <tr title="Slow introduction evokes awakening nature.">
+          <td class="mvt-num">I.1</td>
+          <td class="mvt-tempo">Langsam, schleppend (Wie ein Naturlaut)</td>
+          <td class="mvt-dur">14′30″</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:70%"></div>
+          </td>
+        </tr>
+        <tr title="Ländler-style scherzo.">
+          <td class="mvt-num">I.2</td>
+          <td class="mvt-tempo">Kräftig bewegt, doch nicht zu schnell</td>
+          <td class="mvt-dur">8′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:39%"></div>
+          </td>
+        </tr>
+        <tr title="Funeral march on 'Frère Jacques' canon in minor.">
+          <td class="mvt-num">I.3</td>
+          <td class="mvt-tempo">Feierlich und gemessen, ohne zu schleppen</td>
+          <td class="mvt-dur">11′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:53%"></div>
+          </td>
+        </tr>
+        <tr title="Turbulent finale; D major triumph at close.">
+          <td class="mvt-num">I.4</td>
+          <td class="mvt-tempo">Stürmisch bewegt</td>
+          <td class="mvt-dur">20′30″</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:100%"></div>
+          </td>
+        </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel inst-panel">
+        <h3 class="panel-title">Instrumentation</h3>
+        
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#4caf8a">Woodwind</span>
+          <div class="pills"><span class="pill" style="--pill-color:#4caf8a" title="3rd and 4th flutists double">Piccolo <em>×2</em></span><span class="pill" style="--pill-color:#4caf8a">Flute <em>×4</em></span><span class="pill" style="--pill-color:#4caf8a" title="4th doubles English horn">Oboe <em>×4</em></span><span class="pill" style="--pill-color:#4caf8a" title="doubled by 4th oboist">English Horn <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Eb Clarinet <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a" title="in A and B-flat">Clarinet <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">Bass Clarinet <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Bassoon <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">Contrabassoon <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#e8973a">Brass</span>
+          <div class="pills"><span class="pill" style="--pill-color:#e8973a" title="some offstage in mvt 4">Horn <em>×7</em></span><span class="pill" style="--pill-color:#e8973a" title="some offstage in mvt 4">Trumpet <em>×4</em></span><span class="pill" style="--pill-color:#e8973a">Trombone <em>×3</em></span><span class="pill" style="--pill-color:#e8973a">Tuba <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#c0697d">Percussion</span>
+          <div class="pills"><span class="pill" style="--pill-color:#c0697d">Timpani <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Bass Drum <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Cymbals <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Triangle <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Tam-tam <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#a3c46a">Strings</span>
+          <div class="pills"><span class="pill" style="--pill-color:#a3c46a">Violin I</span><span class="pill" style="--pill-color:#a3c46a">Violin II</span><span class="pill" style="--pill-color:#a3c46a">Viola</span><span class="pill" style="--pill-color:#a3c46a">Cello</span><span class="pill" style="--pill-color:#a3c46a">Double Bass</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sym-card" id="sym2" style="--hue:36">
+    <header class="sym-header">
+      <div class="sym-numeral">II</div>
+      <div class="sym-meta">
+        <h2>Symphony No.&nbsp;2 <span class="in-key">in C minor</span>
+          <span class="subtitle">"Resurrection"</span></h2>
+        <div class="sym-tags">
+          <span class="tag">&#9836; 1888–1894, rev. 1903</span>
+          <span class='tag'>Premiere: 1895</span>
+          <span class="tag total-time">Total: 87′</span>
+        </div>
+      </div>
+    </header>
+
+    <p class="sym-note">Soprano & contralto soloists; SATB chorus in finale.</p>
+
+    <div class="sym-body">
+      <div class="panel movements-panel">
+        <h3 class="panel-title">Movements</h3>
+        <table class="mvt-table">
+          <tbody>
+        <tr title="Mahler asked for a 5-minute pause before mvt 2.">
+          <td class="mvt-num">II.1</td>
+          <td class="mvt-tempo">Allegro maestoso</td>
+          <td class="mvt-dur">22′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:62%"></div>
+          </td>
+        </tr>
+        <tr title="Ländler; nostalgic character.">
+          <td class="mvt-num">II.2</td>
+          <td class="mvt-tempo">Andante moderato</td>
+          <td class="mvt-dur">14′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:40%"></div>
+          </td>
+        </tr>
+        <tr title="Based on 'Des Antonius von Padua Fischpredigt' (Wunderhorn).">
+          <td class="mvt-num">II.3</td>
+          <td class="mvt-tempo">In ruhig fließender Bewegung</td>
+          <td class="mvt-dur">11′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:31%"></div>
+          </td>
+        </tr>
+        <tr title="Wunderhorn lied: 'O Röschen rot'.">
+          <td class="mvt-num">II.4</td>
+          <td class="mvt-tempo"><span class="mvt-label">Urlicht</span> Sehr feierlich, aber schlicht<div class="mvt-voices">Contralto</div></td>
+          <td class="mvt-dur">5′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:14%"></div>
+          </td>
+        </tr>
+        <tr title="Day of Judgment; offstage brass; final choral Resurrection hymn.">
+          <td class="mvt-num">II.5</td>
+          <td class="mvt-tempo">Im Tempo des Scherzos — Wild herausfahrend<div class="mvt-voices">Soprano, Contralto, Chorus</div></td>
+          <td class="mvt-dur">35′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:100%"></div>
+          </td>
+        </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel inst-panel">
+        <h3 class="panel-title">Instrumentation</h3>
+        
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#4caf8a">Woodwind</span>
+          <div class="pills"><span class="pill" style="--pill-color:#4caf8a" title="3rd & 4th flutists double">Piccolo <em>×2</em></span><span class="pill" style="--pill-color:#4caf8a">Flute <em>×4</em></span><span class="pill" style="--pill-color:#4caf8a" title="3rd & 4th double English horn">Oboe <em>×4</em></span><span class="pill" style="--pill-color:#4caf8a">English Horn <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Eb Clarinet <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Clarinet <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">Bass Clarinet <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Bassoon <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">Contrabassoon <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#e8973a">Brass</span>
+          <div class="pills"><span class="pill" style="--pill-color:#e8973a" title="4 offstage (mvt 5)">Horn <em>×10</em></span><span class="pill" style="--pill-color:#e8973a" title="4 offstage (mvt 5)">Trumpet <em>×10</em></span><span class="pill" style="--pill-color:#e8973a">Trombone <em>×4</em></span><span class="pill" style="--pill-color:#e8973a">Tuba <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#c0697d">Percussion</span>
+          <div class="pills"><span class="pill" style="--pill-color:#c0697d" title="2 players">Timpani <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Bass Drum <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Snare Drum <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Cymbals <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Triangle <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Tam-tam <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Glockenspiel <em>×1</em></span><span class="pill" style="--pill-color:#c0697d" title="low tubular bells">Bells <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#7c8de8">Keyboard</span>
+          <div class="pills"><span class="pill" style="--pill-color:#7c8de8">Organ <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#a3c46a">Strings</span>
+          <div class="pills"><span class="pill" style="--pill-color:#a3c46a">Violin I</span><span class="pill" style="--pill-color:#a3c46a">Violin II</span><span class="pill" style="--pill-color:#a3c46a">Viola</span><span class="pill" style="--pill-color:#a3c46a">Cello</span><span class="pill" style="--pill-color:#a3c46a">Double Bass</span><span class="pill" style="--pill-color:#a3c46a">Harp <em>×2</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#b07ec8">Voice</span>
+          <div class="pills"><span class="pill" style="--pill-color:#b07ec8" title="soloist (mvt 5)">Soprano <em>×1</em></span><span class="pill" style="--pill-color:#b07ec8" title="soloist (mvts 4 & 5)">Contralto <em>×1</em></span><span class="pill" style="--pill-color:#b07ec8" title="SATB (mvt 5)">Mixed Chorus <em>×1</em></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sym-card" id="sym3" style="--hue:72">
+    <header class="sym-header">
+      <div class="sym-numeral">III</div>
+      <div class="sym-meta">
+        <h2>Symphony No.&nbsp;3 <span class="in-key">in D minor</span>
+          </h2>
+        <div class="sym-tags">
+          <span class="tag">&#9836; 1893–1896, rev. 1906</span>
+          <span class='tag'>Premiere: 1902</span>
+          <span class="tag total-time">Total: 96′</span>
+        </div>
+      </div>
+    </header>
+
+    <p class="sym-note">Longest symphony in the standard repertoire (~96 min). Mezzo-soprano soloist; women's & boys' choruses.</p>
+
+    <div class="sym-body">
+      <div class="panel movements-panel">
+        <h3 class="panel-title">Movements</h3>
+        <table class="mvt-table">
+          <tbody>
+        <tr title="Longest single symphonic movement Mahler wrote. Summer marches in.">
+          <td class="mvt-num">III.1</td>
+          <td class="mvt-tempo">Kräftig. Entschieden</td>
+          <td class="mvt-dur">33′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:100%"></div>
+          </td>
+        </tr>
+        <tr title="What the flowers of the meadow tell me.">
+          <td class="mvt-num">III.2</td>
+          <td class="mvt-tempo">Tempo di Menuetto</td>
+          <td class="mvt-dur">10′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:30%"></div>
+          </td>
+        </tr>
+        <tr title="What the animals of the forest tell me; posthorn solo offstage.">
+          <td class="mvt-num">III.3</td>
+          <td class="mvt-tempo">Comodo. Scherzando. Ohne Hast</td>
+          <td class="mvt-dur">17′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:51%"></div>
+          </td>
+        </tr>
+        <tr title="What man tells me; setting of Nietzsche's 'Mitternacht'.">
+          <td class="mvt-num">III.4</td>
+          <td class="mvt-tempo">Sehr langsam. Misterioso<div class="mvt-voices">Mezzo-soprano</div></td>
+          <td class="mvt-dur">9′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:27%"></div>
+          </td>
+        </tr>
+        <tr title="What the angels tell me; bells, chorus.">
+          <td class="mvt-num">III.5</td>
+          <td class="mvt-tempo">Lustig im Tempo und keck im Ausdruck<div class="mvt-voices">Women's Chorus, Boys' Chorus</div></td>
+          <td class="mvt-dur">4′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:12%"></div>
+          </td>
+        </tr>
+        <tr title="What love tells me; longest finale in Mahler.">
+          <td class="mvt-num">III.6</td>
+          <td class="mvt-tempo">Langsam. Ruhevoll. Empfunden</td>
+          <td class="mvt-dur">23′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:69%"></div>
+          </td>
+        </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel inst-panel">
+        <h3 class="panel-title">Instrumentation</h3>
+        
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#4caf8a">Woodwind</span>
+          <div class="pills"><span class="pill" style="--pill-color:#4caf8a">Piccolo <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Flute <em>×4</em></span><span class="pill" style="--pill-color:#4caf8a">Oboe <em>×4</em></span><span class="pill" style="--pill-color:#4caf8a">English Horn <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Eb Clarinet <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Clarinet <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">Bass Clarinet <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Bassoon <em>×4</em></span><span class="pill" style="--pill-color:#4caf8a">Contrabassoon <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#e8973a">Brass</span>
+          <div class="pills"><span class="pill" style="--pill-color:#e8973a" title="4 offstage (mvt 3)">Horn <em>×8</em></span><span class="pill" style="--pill-color:#e8973a" title="4 offstage (mvt 1)">Trumpet <em>×6</em></span><span class="pill" style="--pill-color:#e8973a">Trombone <em>×4</em></span><span class="pill" style="--pill-color:#e8973a">Contrabass Tuba <em>×1</em></span><span class="pill" style="--pill-color:#e8973a" title="offstage (mvt 3); often played on flugelhorn">Posthorn <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#c0697d">Percussion</span>
+          <div class="pills"><span class="pill" style="--pill-color:#c0697d" title="2 players">Timpani <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Bass Drum <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Snare Drum <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Cymbals <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Triangle <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Tam-tam <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Glockenspiel <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Bells <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#a3c46a">Strings</span>
+          <div class="pills"><span class="pill" style="--pill-color:#a3c46a">Violin I</span><span class="pill" style="--pill-color:#a3c46a">Violin II</span><span class="pill" style="--pill-color:#a3c46a">Viola</span><span class="pill" style="--pill-color:#a3c46a">Cello</span><span class="pill" style="--pill-color:#a3c46a">Double Bass</span><span class="pill" style="--pill-color:#a3c46a">Harp <em>×2</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#b07ec8">Voice</span>
+          <div class="pills"><span class="pill" style="--pill-color:#b07ec8" title="soloist (mvt 4)">Mezzo-soprano <em>×1</em></span><span class="pill" style="--pill-color:#b07ec8" title="(mvt 5)">Women's Chorus <em>×1</em></span><span class="pill" style="--pill-color:#b07ec8" title="(mvt 5); bells in hand">Boys' Chorus <em>×1</em></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sym-card" id="sym4" style="--hue:108">
+    <header class="sym-header">
+      <div class="sym-numeral">IV</div>
+      <div class="sym-meta">
+        <h2>Symphony No.&nbsp;4 <span class="in-key">in G major</span>
+          </h2>
+        <div class="sym-tags">
+          <span class="tag">&#9836; 1899–1900, rev. 1901–10</span>
+          <span class='tag'>Premiere: 1901</span>
+          <span class="tag total-time">Total: 56′</span>
+        </div>
+      </div>
+    </header>
+
+    <p class="sym-note">Comparatively modest orchestration. Soprano soloist in finale. Scordatura solo violin in mvt 2.</p>
+
+    <div class="sym-body">
+      <div class="panel movements-panel">
+        <h3 class="panel-title">Movements</h3>
+        <table class="mvt-table">
+          <tbody>
+        <tr title="Sleigh bells open; classical in spirit.">
+          <td class="mvt-num">IV.1</td>
+          <td class="mvt-tempo">Bedächtig. Nicht eilen</td>
+          <td class="mvt-dur">17′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:85%"></div>
+          </td>
+        </tr>
+        <tr title="Scherzo; scordatura violin ('Freund Hein').">
+          <td class="mvt-num">IV.2</td>
+          <td class="mvt-tempo">In gemächlicher Bewegung. Ohne Hast</td>
+          <td class="mvt-dur">10′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:50%"></div>
+          </td>
+        </tr>
+        <tr title="Theme and variations; profound slow movement.">
+          <td class="mvt-num">IV.3</td>
+          <td class="mvt-tempo">Ruhevoll</td>
+          <td class="mvt-dur">20′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:100%"></div>
+          </td>
+        </tr>
+        <tr title="Das himmlische Leben (Wunderhorn); originally planned for Sym. 3.">
+          <td class="mvt-num">IV.4</td>
+          <td class="mvt-tempo">Sehr behaglich<div class="mvt-voices">Soprano</div></td>
+          <td class="mvt-dur">9′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:45%"></div>
+          </td>
+        </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel inst-panel">
+        <h3 class="panel-title">Instrumentation</h3>
+        
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#4caf8a">Woodwind</span>
+          <div class="pills"><span class="pill" style="--pill-color:#4caf8a">Piccolo <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Flute <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">Oboe <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">English Horn <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Eb Clarinet <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Clarinet <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">Bass Clarinet <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Bassoon <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">Contrabassoon <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#e8973a">Brass</span>
+          <div class="pills"><span class="pill" style="--pill-color:#e8973a">Horn <em>×4</em></span><span class="pill" style="--pill-color:#e8973a">Trumpet <em>×3</em></span><span class="pill" style="--pill-color:#e8973a">Trombone <em>×3</em></span><span class="pill" style="--pill-color:#e8973a">Tuba <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#c0697d">Percussion</span>
+          <div class="pills"><span class="pill" style="--pill-color:#c0697d">Timpani <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Bass Drum <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Snare Drum <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Cymbals <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Triangle <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Tam-tam <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Glockenspiel <em>×1</em></span><span class="pill" style="--pill-color:#c0697d" title="sleigh bells (mvt 1)">Bells <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#a3c46a">Strings</span>
+          <div class="pills"><span class="pill" style="--pill-color:#a3c46a" title="scordatura soloist in mvt 2">Violin I</span><span class="pill" style="--pill-color:#a3c46a">Violin II</span><span class="pill" style="--pill-color:#a3c46a">Viola</span><span class="pill" style="--pill-color:#a3c46a">Cello</span><span class="pill" style="--pill-color:#a3c46a">Double Bass</span><span class="pill" style="--pill-color:#a3c46a">Harp <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#b07ec8">Voice</span>
+          <div class="pills"><span class="pill" style="--pill-color:#b07ec8" title="soloist (mvt 4)">Soprano <em>×1</em></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sym-card" id="sym5" style="--hue:144">
+    <header class="sym-header">
+      <div class="sym-numeral">V</div>
+      <div class="sym-meta">
+        <h2>Symphony No.&nbsp;5 <span class="in-key">in C-sharp minor</span>
+          </h2>
+        <div class="sym-tags">
+          <span class="tag">&#9836; 1901–1902, rev. 1904–11</span>
+          <span class='tag'>Premiere: 1904</span>
+          <span class="tag total-time">Total: 69′</span>
+        </div>
+      </div>
+    </header>
+
+    <p class="sym-note">No voices. Structured in three parts (I–II, III, IV–V). Adagietto for strings and harp only.</p>
+
+    <div class="sym-body">
+      <div class="panel movements-panel">
+        <h3 class="panel-title">Movements</h3>
+        <table class="mvt-table">
+          <tbody>
+        <tr title="Funeral march; trumpet fanfare opens.">
+          <td class="mvt-num">V.1</td>
+          <td class="mvt-tempo"><span class="mvt-label">Part I</span> Trauermarsch — In gemessenem Schritt. Streng. Wie ein Kondukt</td>
+          <td class="mvt-dur">12′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:70%"></div>
+          </td>
+        </tr>
+        <tr title="Raging, impassioned.">
+          <td class="mvt-num">V.2</td>
+          <td class="mvt-tempo"><span class="mvt-label">Part I</span> Stürmisch bewegt, mit größter Vehemenz</td>
+          <td class="mvt-dur">15′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:88%"></div>
+          </td>
+        </tr>
+        <tr title="Central pillar of the symphony; horn-dominated.">
+          <td class="mvt-num">V.3</td>
+          <td class="mvt-tempo"><span class="mvt-label">Part II</span> Scherzo — Kräftig, nicht zu schnell</td>
+          <td class="mvt-dur">17′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:100%"></div>
+          </td>
+        </tr>
+        <tr title="Strings and harp only; famously used in Visconti's 'Death in Venice'.">
+          <td class="mvt-num">V.4</td>
+          <td class="mvt-tempo"><span class="mvt-label">Part III</span> Adagietto — Sehr langsam</td>
+          <td class="mvt-dur">10′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:58%"></div>
+          </td>
+        </tr>
+        <tr title="Contrapuntal brilliance; C major affirmation.">
+          <td class="mvt-num">V.5</td>
+          <td class="mvt-tempo"><span class="mvt-label">Part III</span> Rondo-Finale — Allegro</td>
+          <td class="mvt-dur">15′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:88%"></div>
+          </td>
+        </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel inst-panel">
+        <h3 class="panel-title">Instrumentation</h3>
+        
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#4caf8a">Woodwind</span>
+          <div class="pills"><span class="pill" style="--pill-color:#4caf8a">Piccolo <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Flute <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">Oboe <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">English Horn <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Eb Clarinet <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Clarinet <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">Bass Clarinet <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Bassoon <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">Contrabassoon <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#e8973a">Brass</span>
+          <div class="pills"><span class="pill" style="--pill-color:#e8973a">Horn <em>×6</em></span><span class="pill" style="--pill-color:#e8973a">Trumpet <em>×4</em></span><span class="pill" style="--pill-color:#e8973a">Trombone <em>×3</em></span><span class="pill" style="--pill-color:#e8973a">Bass Trombone <em>×1</em></span><span class="pill" style="--pill-color:#e8973a">Tuba <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#c0697d">Percussion</span>
+          <div class="pills"><span class="pill" style="--pill-color:#c0697d">Timpani <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Bass Drum <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Snare Drum <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Cymbals <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Triangle <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Tam-tam <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Glockenspiel <em>×1</em></span><span class="pill" style="--pill-color:#c0697d" title="mvt 3 (birch switch on bass drum)">Rute <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#a3c46a">Strings</span>
+          <div class="pills"><span class="pill" style="--pill-color:#a3c46a">Violin I</span><span class="pill" style="--pill-color:#a3c46a">Violin II</span><span class="pill" style="--pill-color:#a3c46a">Viola</span><span class="pill" style="--pill-color:#a3c46a">Cello</span><span class="pill" style="--pill-color:#a3c46a">Double Bass</span><span class="pill" style="--pill-color:#a3c46a" title="Adagietto: harp and strings only">Harp <em>×1</em></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sym-card" id="sym6" style="--hue:180">
+    <header class="sym-header">
+      <div class="sym-numeral">VI</div>
+      <div class="sym-meta">
+        <h2>Symphony No.&nbsp;6 <span class="in-key">in A minor</span>
+          <span class="subtitle">"Tragic"</span></h2>
+        <div class="sym-tags">
+          <span class="tag">&#9836; 1903–1904, rev. 1906</span>
+          <span class='tag'>Premiere: 1906</span>
+          <span class="tag total-time">Total: 79′</span>
+        </div>
+      </div>
+    </header>
+
+    <p class="sym-note">No voices. Famous for three hammer blows in finale (later reduced to two). Debate over mvt 2/3 order (Scherzo vs Andante); entry follows Mahler's final revision.</p>
+
+    <div class="sym-body">
+      <div class="panel movements-panel">
+        <h3 class="panel-title">Movements</h3>
+        <table class="mvt-table">
+          <tbody>
+        <tr title="A minor march; Alma theme in E major.">
+          <td class="mvt-num">VI.1</td>
+          <td class="mvt-tempo">Allegro energico, ma non troppo. Heftig, aber markig</td>
+          <td class="mvt-dur">23′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:76%"></div>
+          </td>
+        </tr>
+        <tr title="Placed second in Mahler's final revision (some conductors swap 2 & 3).">
+          <td class="mvt-num">VI.2</td>
+          <td class="mvt-tempo">Scherzo — Wuchtig</td>
+          <td class="mvt-dur">12′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:40%"></div>
+          </td>
+        </tr>
+        <tr title="Lyrical respite; E-flat major.">
+          <td class="mvt-num">VI.3</td>
+          <td class="mvt-tempo">Andante moderato</td>
+          <td class="mvt-dur">14′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:46%"></div>
+          </td>
+        </tr>
+        <tr title="Tragic hammer blows (originally 3, Mahler reduced to 2). Longest finale Mahler wrote.">
+          <td class="mvt-num">VI.4</td>
+          <td class="mvt-tempo">Finale — Allegro moderato</td>
+          <td class="mvt-dur">30′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:100%"></div>
+          </td>
+        </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel inst-panel">
+        <h3 class="panel-title">Instrumentation</h3>
+        
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#4caf8a">Woodwind</span>
+          <div class="pills"><span class="pill" style="--pill-color:#4caf8a">Piccolo <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Flute <em>×4</em></span><span class="pill" style="--pill-color:#4caf8a">Oboe <em>×4</em></span><span class="pill" style="--pill-color:#4caf8a">English Horn <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Eb Clarinet <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Clarinet <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">Bass Clarinet <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Bassoon <em>×4</em></span><span class="pill" style="--pill-color:#4caf8a">Contrabassoon <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#e8973a">Brass</span>
+          <div class="pills"><span class="pill" style="--pill-color:#e8973a">Horn <em>×8</em></span><span class="pill" style="--pill-color:#e8973a">Trumpet <em>×6</em></span><span class="pill" style="--pill-color:#e8973a">Trombone <em>×3</em></span><span class="pill" style="--pill-color:#e8973a">Bass Trombone <em>×1</em></span><span class="pill" style="--pill-color:#e8973a">Contrabass Tuba <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#c0697d">Percussion</span>
+          <div class="pills"><span class="pill" style="--pill-color:#c0697d" title="2 players">Timpani <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Bass Drum <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Snare Drum <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Cymbals <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Triangle <em>×1</em></span><span class="pill" style="--pill-color:#c0697d" title="high and low">Tam-tam <em>×2</em></span><span class="pill" style="--pill-color:#c0697d">Glockenspiel <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Xylophone <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Celesta <em>×1</em></span><span class="pill" style="--pill-color:#c0697d" title="various pitches; some offstage">Cowbells <em>×1</em></span><span class="pill" style="--pill-color:#c0697d" title="large wooden hammer (Finale); Mahler reduced from 3 to 2 blows">Hammer <em>×1</em></span><span class="pill" style="--pill-color:#c0697d" title="low-pitched, offstage">Deep Bells <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#a3c46a">Strings</span>
+          <div class="pills"><span class="pill" style="--pill-color:#a3c46a">Violin I</span><span class="pill" style="--pill-color:#a3c46a">Violin II</span><span class="pill" style="--pill-color:#a3c46a">Viola</span><span class="pill" style="--pill-color:#a3c46a">Cello</span><span class="pill" style="--pill-color:#a3c46a">Double Bass</span><span class="pill" style="--pill-color:#a3c46a">Harp <em>×2</em></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sym-card" id="sym7" style="--hue:216">
+    <header class="sym-header">
+      <div class="sym-numeral">VII</div>
+      <div class="sym-meta">
+        <h2>Symphony No.&nbsp;7 <span class="in-key">in E minor</span>
+          <span class="subtitle">"Song of the Night"</span></h2>
+        <div class="sym-tags">
+          <span class="tag">&#9836; 1904–1905, rev. 1909</span>
+          <span class='tag'>Premiere: 1908</span>
+          <span class="tag total-time">Total: 79′</span>
+        </div>
+      </div>
+    </header>
+
+    <p class="sym-note">No voices. Unique use of guitar and mandolin in Nachtmusik II. Two Tenorhorns (tenor tubas) in addition to standard brass.</p>
+
+    <div class="sym-body">
+      <div class="panel movements-panel">
+        <h3 class="panel-title">Movements</h3>
+        <table class="mvt-table">
+          <tbody>
+        <tr title="Tenor-horn call opens; broad arch.">
+          <td class="mvt-num">VII.1</td>
+          <td class="mvt-tempo">Langsam (Adagio) — Allegro risoluto, ma non troppo</td>
+          <td class="mvt-dur">20′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:100%"></div>
+          </td>
+        </tr>
+        <tr title="Night music; horn-dominated serenade.">
+          <td class="mvt-num">VII.2</td>
+          <td class="mvt-tempo"><span class="mvt-label">Nachtmusik I</span> Allegro moderato</td>
+          <td class="mvt-dur">17′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:85%"></div>
+          </td>
+        </tr>
+        <tr title="Shadow-like; eerie, fleet.">
+          <td class="mvt-num">VII.3</td>
+          <td class="mvt-tempo">Scherzo — Schattenhaft</td>
+          <td class="mvt-dur">10′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:50%"></div>
+          </td>
+        </tr>
+        <tr title="Guitar and mandolin prominent; intimate serenade.">
+          <td class="mvt-num">VII.4</td>
+          <td class="mvt-tempo"><span class="mvt-label">Nachtmusik II</span> Andante amoroso</td>
+          <td class="mvt-dur">14′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:70%"></div>
+          </td>
+        </tr>
+        <tr title="C major daybreak; sometimes criticised as enigmatically bright after dark movements.">
+          <td class="mvt-num">VII.5</td>
+          <td class="mvt-tempo">Rondo-Finale — Allegro ordinario</td>
+          <td class="mvt-dur">18′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:90%"></div>
+          </td>
+        </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel inst-panel">
+        <h3 class="panel-title">Instrumentation</h3>
+        
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#4caf8a">Woodwind</span>
+          <div class="pills"><span class="pill" style="--pill-color:#4caf8a">Piccolo <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Flute <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">Oboe <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">English Horn <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Eb Clarinet <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Clarinet <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">Bass Clarinet <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Bassoon <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">Contrabassoon <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#e8973a">Brass</span>
+          <div class="pills"><span class="pill" style="--pill-color:#e8973a">Horn <em>×4</em></span><span class="pill" style="--pill-color:#e8973a">Trumpet <em>×3</em></span><span class="pill" style="--pill-color:#e8973a">Trombone <em>×3</em></span><span class="pill" style="--pill-color:#e8973a">Bass Trombone <em>×1</em></span><span class="pill" style="--pill-color:#e8973a" title="Tenorhorns / Wagner tubas (mvts 1 & 2)">Tenor Tuba <em>×2</em></span><span class="pill" style="--pill-color:#e8973a">Contrabass Tuba <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#c0697d">Percussion</span>
+          <div class="pills"><span class="pill" style="--pill-color:#c0697d">Timpani <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Bass Drum <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Snare Drum <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Cymbals <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Triangle <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Tam-tam <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Glockenspiel <em>×1</em></span><span class="pill" style="--pill-color:#c0697d" title="various pitches">Cowbells <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Deep Bells <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#a3c46a">Strings</span>
+          <div class="pills"><span class="pill" style="--pill-color:#a3c46a">Violin I</span><span class="pill" style="--pill-color:#a3c46a">Violin II</span><span class="pill" style="--pill-color:#a3c46a">Viola</span><span class="pill" style="--pill-color:#a3c46a">Cello</span><span class="pill" style="--pill-color:#a3c46a">Double Bass</span><span class="pill" style="--pill-color:#a3c46a">Harp <em>×2</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#d4ac3e">Plucked</span>
+          <div class="pills"><span class="pill" style="--pill-color:#d4ac3e" title="Nachtmusik II">Guitar <em>×1</em></span><span class="pill" style="--pill-color:#d4ac3e" title="Nachtmusik II">Mandolin <em>×1</em></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sym-card" id="sym8" style="--hue:252">
+    <header class="sym-header">
+      <div class="sym-numeral">VIII</div>
+      <div class="sym-meta">
+        <h2>Symphony No.&nbsp;8 <span class="in-key">in E-flat major</span>
+          <span class="subtitle">"Symphony of a Thousand"</span></h2>
+        <div class="sym-tags">
+          <span class="tag">&#9836; 1906</span>
+          <span class='tag'>Premiere: 1910</span>
+          <span class="tag total-time">Total: 83′</span>
+        </div>
+      </div>
+    </header>
+
+    <p class="sym-note">Eight soloists, two large mixed choruses, boys' chorus. Part I: Veni Creator Spiritus. Part II: Final scene from Goethe's Faust.</p>
+
+    <div class="sym-body">
+      <div class="panel movements-panel">
+        <h3 class="panel-title">Movements</h3>
+        <table class="mvt-table">
+          <tbody>
+        <tr title="Latin hymn by Hrabanus Maurus (9th c.). Dense double-fugue.">
+          <td class="mvt-num">VIII.1</td>
+          <td class="mvt-tempo"><span class="mvt-label">Part I</span> Veni Creator Spiritus — Allegro impetuoso<div class="mvt-voices">3 Sopranos, 2 Mezzo-sopranos, Tenor, Baritone, Bass-baritone, 2 Mixed Choruses, Boys' Chorus</div></td>
+          <td class="mvt-dur">23′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:38%"></div>
+          </td>
+        </tr>
+        <tr title="Goethe, Faust II, final scene. Through-composed; multiple tempos.">
+          <td class="mvt-num">VIII.2</td>
+          <td class="mvt-tempo"><span class="mvt-label">Part II</span> Poco adagio — Andante — Chorus mysticus<div class="mvt-voices">3 Sopranos, 2 Mezzo-sopranos, Tenor, Baritone, Bass-baritone, 2 Mixed Choruses, Boys' Chorus</div></td>
+          <td class="mvt-dur">60′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:100%"></div>
+          </td>
+        </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel inst-panel">
+        <h3 class="panel-title">Instrumentation</h3>
+        
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#4caf8a">Woodwind</span>
+          <div class="pills"><span class="pill" style="--pill-color:#4caf8a">Piccolo <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Flute <em>×4</em></span><span class="pill" style="--pill-color:#4caf8a">Oboe <em>×4</em></span><span class="pill" style="--pill-color:#4caf8a">English Horn <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Eb Clarinet <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Clarinet <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">Bass Clarinet <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Bassoon <em>×4</em></span><span class="pill" style="--pill-color:#4caf8a">Contrabassoon <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#e8973a">Brass</span>
+          <div class="pills"><span class="pill" style="--pill-color:#e8973a">Horn <em>×8</em></span><span class="pill" style="--pill-color:#e8973a" title="4 offstage">Trumpet <em>×8</em></span><span class="pill" style="--pill-color:#e8973a" title="4 offstage">Trombone <em>×7</em></span><span class="pill" style="--pill-color:#e8973a">Contrabass Tuba <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#c0697d">Percussion</span>
+          <div class="pills"><span class="pill" style="--pill-color:#c0697d" title="2 players">Timpani <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Bass Drum <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Snare Drum <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Cymbals <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Triangle <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Tam-tam <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Glockenspiel <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Celesta <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Bells <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#7c8de8">Keyboard</span>
+          <div class="pills"><span class="pill" style="--pill-color:#7c8de8">Piano <em>×1</em></span><span class="pill" style="--pill-color:#7c8de8">Organ <em>×1</em></span><span class="pill" style="--pill-color:#7c8de8">Harmonium <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#a3c46a">Strings</span>
+          <div class="pills"><span class="pill" style="--pill-color:#a3c46a">Violin I</span><span class="pill" style="--pill-color:#a3c46a">Violin II</span><span class="pill" style="--pill-color:#a3c46a">Viola</span><span class="pill" style="--pill-color:#a3c46a">Cello</span><span class="pill" style="--pill-color:#a3c46a">Double Bass</span><span class="pill" style="--pill-color:#a3c46a">Harp <em>×4</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#b07ec8">Voice</span>
+          <div class="pills"><span class="pill" style="--pill-color:#b07ec8" title="soloists">Soprano <em>×3</em></span><span class="pill" style="--pill-color:#b07ec8" title="soloists">Mezzo-soprano <em>×2</em></span><span class="pill" style="--pill-color:#b07ec8" title="soloist">Tenor <em>×1</em></span><span class="pill" style="--pill-color:#b07ec8" title="soloist">Baritone <em>×1</em></span><span class="pill" style="--pill-color:#b07ec8" title="soloist">Bass-baritone <em>×1</em></span><span class="pill" style="--pill-color:#b07ec8" title="two large SATB choruses">Mixed Chorus <em>×2</em></span><span class="pill" style="--pill-color:#b07ec8">Boys' Chorus <em>×1</em></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sym-card" id="sym9" style="--hue:288">
+    <header class="sym-header">
+      <div class="sym-numeral">IX</div>
+      <div class="sym-meta">
+        <h2>Symphony No.&nbsp;9 <span class="in-key">in D major</span>
+          </h2>
+        <div class="sym-tags">
+          <span class="tag">&#9836; 1908–1909</span>
+          <span class='tag'>Premiere: 1912</span>
+          <span class="tag total-time">Total: 78′</span>
+        </div>
+      </div>
+    </header>
+
+    <p class="sym-note">No voices. Last symphony Mahler completed. Posthumous premiere (Bruno Walter).</p>
+
+    <div class="sym-body">
+      <div class="panel movements-panel">
+        <h3 class="panel-title">Movements</h3>
+        <table class="mvt-table">
+          <tbody>
+        <tr title="D major/minor; 'farewell' character; asymmetric phrasing.">
+          <td class="mvt-num">IX.1</td>
+          <td class="mvt-tempo">Andante comodo</td>
+          <td class="mvt-dur">27′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:100%"></div>
+          </td>
+        </tr>
+        <tr title="Three dance types juxtaposed (Ländler, waltz, minuet).">
+          <td class="mvt-num">IX.2</td>
+          <td class="mvt-tempo">Im Tempo eines gemächlichen Ländlers. Etwas täppisch und sehr derb</td>
+          <td class="mvt-dur">16′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:59%"></div>
+          </td>
+        </tr>
+        <tr title="Savage counterpoint; 'To my brothers in Apollo' (Mahler's note).">
+          <td class="mvt-num">IX.3</td>
+          <td class="mvt-tempo">Rondo-Burleske — Allegro assai. Sehr trotzig</td>
+          <td class="mvt-dur">11′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:40%"></div>
+          </td>
+        </tr>
+        <tr title="D-flat major valediction; dissolves into silence.">
+          <td class="mvt-num">IX.4</td>
+          <td class="mvt-tempo">Adagio — Sehr langsam und noch zurückhaltend</td>
+          <td class="mvt-dur">24′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:88%"></div>
+          </td>
+        </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel inst-panel">
+        <h3 class="panel-title">Instrumentation</h3>
+        
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#4caf8a">Woodwind</span>
+          <div class="pills"><span class="pill" style="--pill-color:#4caf8a">Piccolo <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Flute <em>×4</em></span><span class="pill" style="--pill-color:#4caf8a">Oboe <em>×4</em></span><span class="pill" style="--pill-color:#4caf8a">English Horn <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Eb Clarinet <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Clarinet <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">Bass Clarinet <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Bassoon <em>×4</em></span><span class="pill" style="--pill-color:#4caf8a">Contrabassoon <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#e8973a">Brass</span>
+          <div class="pills"><span class="pill" style="--pill-color:#e8973a">Horn <em>×4</em></span><span class="pill" style="--pill-color:#e8973a">Trumpet <em>×3</em></span><span class="pill" style="--pill-color:#e8973a">Trombone <em>×3</em></span><span class="pill" style="--pill-color:#e8973a">Bass Trombone <em>×1</em></span><span class="pill" style="--pill-color:#e8973a">Contrabass Tuba <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#c0697d">Percussion</span>
+          <div class="pills"><span class="pill" style="--pill-color:#c0697d">Timpani <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Bass Drum <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Snare Drum <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Cymbals <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Triangle <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Tam-tam <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Glockenspiel <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Celesta <em>×1</em></span><span class="pill" style="--pill-color:#c0697d" title="mvt 2">Cowbells <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#a3c46a">Strings</span>
+          <div class="pills"><span class="pill" style="--pill-color:#a3c46a">Violin I</span><span class="pill" style="--pill-color:#a3c46a">Violin II</span><span class="pill" style="--pill-color:#a3c46a">Viola</span><span class="pill" style="--pill-color:#a3c46a">Cello</span><span class="pill" style="--pill-color:#a3c46a">Double Bass</span><span class="pill" style="--pill-color:#a3c46a">Harp <em>×2</em></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sym-card" id="sym10" style="--hue:324">
+    <header class="sym-header">
+      <div class="sym-numeral">X</div>
+      <div class="sym-meta">
+        <h2>Symphony No.&nbsp;10 <span class="in-key">in F-sharp major</span>
+          </h2>
+        <div class="sym-tags">
+          <span class="tag">&#9836; 1910 (unfinished)</span>
+          
+          <span class="tag total-time">Total: 80′</span>
+        </div>
+      </div>
+    </header>
+
+    <p class="sym-note">Only the Adagio was fully orchestrated by Mahler. Movement timings reflect the Deryck Cooke performing edition (1976). Other completions by Carpenter, Mazzetti, Samale–Cohrs–Voss, Wheeler.</p>
+
+    <div class="sym-body">
+      <div class="panel movements-panel">
+        <h3 class="panel-title">Movements</h3>
+        <table class="mvt-table">
+          <tbody>
+        <tr title="Only movement fully orchestrated by Mahler. F-sharp major.">
+          <td class="mvt-num">X.1</td>
+          <td class="mvt-tempo">Adagio — Andante</td>
+          <td class="mvt-dur">25′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:100%"></div>
+          </td>
+        </tr>
+        <tr title="Cooke completion. Demonic energy.">
+          <td class="mvt-num">X.2</td>
+          <td class="mvt-tempo"><span class="mvt-label">Scherzo I</span> Scherzo — Schnelle Viertel</td>
+          <td class="mvt-dur">12′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:48%"></div>
+          </td>
+        </tr>
+        <tr title="Short intermezzo; B-flat minor.">
+          <td class="mvt-num">X.3</td>
+          <td class="mvt-tempo"><span class="mvt-label">Purgatorio</span> Allegretto moderato</td>
+          <td class="mvt-dur">4′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:16%"></div>
+          </td>
+        </tr>
+        <tr title="Cooke completion. Drum stroke motive.">
+          <td class="mvt-num">X.4</td>
+          <td class="mvt-tempo"><span class="mvt-label">Scherzo II</span> Allegro pesante</td>
+          <td class="mvt-dur">14′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:56%"></div>
+          </td>
+        </tr>
+        <tr title="Cooke completion. Returns to Adagio material; F-sharp major resolution.">
+          <td class="mvt-num">X.5</td>
+          <td class="mvt-tempo">Finale — Langsam, Adagio</td>
+          <td class="mvt-dur">25′</td>
+          <td class="mvt-bar-cell">
+            <div class="mvt-bar" style="width:100%"></div>
+          </td>
+        </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel inst-panel">
+        <h3 class="panel-title">Instrumentation</h3>
+        
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#4caf8a">Woodwind</span>
+          <div class="pills"><span class="pill" style="--pill-color:#4caf8a">Piccolo <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Flute <em>×4</em></span><span class="pill" style="--pill-color:#4caf8a">Oboe <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">English Horn <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Eb Clarinet <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Clarinet <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">Bass Clarinet <em>×1</em></span><span class="pill" style="--pill-color:#4caf8a">Bassoon <em>×3</em></span><span class="pill" style="--pill-color:#4caf8a">Contrabassoon <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#e8973a">Brass</span>
+          <div class="pills"><span class="pill" style="--pill-color:#e8973a">Horn <em>×4</em></span><span class="pill" style="--pill-color:#e8973a">Trumpet <em>×3</em></span><span class="pill" style="--pill-color:#e8973a">Trombone <em>×3</em></span><span class="pill" style="--pill-color:#e8973a">Bass Trombone <em>×1</em></span><span class="pill" style="--pill-color:#e8973a">Contrabass Tuba <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#c0697d">Percussion</span>
+          <div class="pills"><span class="pill" style="--pill-color:#c0697d">Timpani <em>×1</em></span><span class="pill" style="--pill-color:#c0697d" title="single stroke in Finale (mvt 5)">Bass Drum <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Snare Drum <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Cymbals <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Tam-tam <em>×1</em></span><span class="pill" style="--pill-color:#c0697d">Cowbells <em>×1</em></span></div>
+        </div>
+        <div class="inst-group">
+          <span class="inst-cat" style="color:#a3c46a">Strings</span>
+          <div class="pills"><span class="pill" style="--pill-color:#a3c46a">Violin I</span><span class="pill" style="--pill-color:#a3c46a">Violin II</span><span class="pill" style="--pill-color:#a3c46a">Viola</span><span class="pill" style="--pill-color:#a3c46a">Cello</span><span class="pill" style="--pill-color:#a3c46a">Double Bass</span><span class="pill" style="--pill-color:#a3c46a">Harp <em>×2</em></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  Running times are representative averages; actual durations vary by conductor and edition.
+  Symphony No.&nbsp;10 data reflects the Deryck Cooke performing edition (1976).
+  Hover movements for additional notes.
+</footer>
+
+</body>
+</html>

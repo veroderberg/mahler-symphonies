@@ -1,0 +1,2282 @@
+[
+  {
+    "id": 1,
+    "number": 1,
+    "key": "D major",
+    "subtitle": "Titan",
+    "year_composed": "1887–1888, rev. 1893–96",
+    "year_premiered": 1889,
+    "total_duration_min": 54.0,
+    "notes": "Originally 5 movements; Mahler removed 'Blumine' (2nd mvt) in 1894.",
+    "movements": [
+      {
+        "number": 1,
+        "label": null,
+        "tempo_marking": "Langsam, schleppend (Wie ein Naturlaut)",
+        "duration_min": 14.5,
+        "voices": null,
+        "notes": "Slow introduction evokes awakening nature."
+      },
+      {
+        "number": 2,
+        "label": null,
+        "tempo_marking": "Kräftig bewegt, doch nicht zu schnell",
+        "duration_min": 8.0,
+        "voices": null,
+        "notes": "Ländler-style scherzo."
+      },
+      {
+        "number": 3,
+        "label": null,
+        "tempo_marking": "Feierlich und gemessen, ohne zu schleppen",
+        "duration_min": 11.0,
+        "voices": null,
+        "notes": "Funeral march on 'Frère Jacques' canon in minor."
+      },
+      {
+        "number": 4,
+        "label": null,
+        "tempo_marking": "Stürmisch bewegt",
+        "duration_min": 20.5,
+        "voices": null,
+        "notes": "Turbulent finale; D major triumph at close."
+      }
+    ],
+    "instrumentation": [
+      {
+        "category": "Woodwind",
+        "instrument": "Piccolo",
+        "count": 2,
+        "notes": "3rd and 4th flutists double"
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Flute",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Oboe",
+        "count": 4,
+        "notes": "4th doubles English horn"
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "English Horn",
+        "count": 1,
+        "notes": "doubled by 4th oboist"
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Eb Clarinet",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Clarinet",
+        "count": 3,
+        "notes": "in A and B-flat"
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Bass Clarinet",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Bassoon",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Contrabassoon",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Horn",
+        "count": 7,
+        "notes": "some offstage in mvt 4"
+      },
+      {
+        "category": "Brass",
+        "instrument": "Trumpet",
+        "count": 4,
+        "notes": "some offstage in mvt 4"
+      },
+      {
+        "category": "Brass",
+        "instrument": "Trombone",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Tuba",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Timpani",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Bass Drum",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Cymbals",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Triangle",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Tam-tam",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Violin I",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Violin II",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Viola",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Cello",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Double Bass",
+        "count": null,
+        "notes": null
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "number": 2,
+    "key": "C minor",
+    "subtitle": "Resurrection",
+    "year_composed": "1888–1894, rev. 1903",
+    "year_premiered": 1895,
+    "total_duration_min": 87.0,
+    "notes": "Soprano & contralto soloists; SATB chorus in finale.",
+    "movements": [
+      {
+        "number": 1,
+        "label": null,
+        "tempo_marking": "Allegro maestoso",
+        "duration_min": 22.0,
+        "voices": null,
+        "notes": "Mahler asked for a 5-minute pause before mvt 2."
+      },
+      {
+        "number": 2,
+        "label": null,
+        "tempo_marking": "Andante moderato",
+        "duration_min": 14.0,
+        "voices": null,
+        "notes": "Ländler; nostalgic character."
+      },
+      {
+        "number": 3,
+        "label": null,
+        "tempo_marking": "In ruhig fließender Bewegung",
+        "duration_min": 11.0,
+        "voices": null,
+        "notes": "Based on 'Des Antonius von Padua Fischpredigt' (Wunderhorn)."
+      },
+      {
+        "number": 4,
+        "label": "Urlicht",
+        "tempo_marking": "Sehr feierlich, aber schlicht",
+        "duration_min": 5.0,
+        "voices": "Contralto",
+        "notes": "Wunderhorn lied: 'O Röschen rot'."
+      },
+      {
+        "number": 5,
+        "label": null,
+        "tempo_marking": "Im Tempo des Scherzos — Wild herausfahrend",
+        "duration_min": 35.0,
+        "voices": "Soprano, Contralto, Chorus",
+        "notes": "Day of Judgment; offstage brass; final choral Resurrection hymn."
+      }
+    ],
+    "instrumentation": [
+      {
+        "category": "Woodwind",
+        "instrument": "Piccolo",
+        "count": 2,
+        "notes": "3rd & 4th flutists double"
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Flute",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Oboe",
+        "count": 4,
+        "notes": "3rd & 4th double English horn"
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "English Horn",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Eb Clarinet",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Clarinet",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Bass Clarinet",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Bassoon",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Contrabassoon",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Horn",
+        "count": 10,
+        "notes": "4 offstage (mvt 5)"
+      },
+      {
+        "category": "Brass",
+        "instrument": "Trumpet",
+        "count": 10,
+        "notes": "4 offstage (mvt 5)"
+      },
+      {
+        "category": "Brass",
+        "instrument": "Trombone",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Tuba",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Timpani",
+        "count": 1,
+        "notes": "2 players"
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Bass Drum",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Snare Drum",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Cymbals",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Triangle",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Tam-tam",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Glockenspiel",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Bells",
+        "count": 1,
+        "notes": "low tubular bells"
+      },
+      {
+        "category": "Keyboard",
+        "instrument": "Organ",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Violin I",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Violin II",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Viola",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Cello",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Double Bass",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Harp",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "category": "Voice",
+        "instrument": "Soprano",
+        "count": 1,
+        "notes": "soloist (mvt 5)"
+      },
+      {
+        "category": "Voice",
+        "instrument": "Contralto",
+        "count": 1,
+        "notes": "soloist (mvts 4 & 5)"
+      },
+      {
+        "category": "Voice",
+        "instrument": "Mixed Chorus",
+        "count": 1,
+        "notes": "SATB (mvt 5)"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "number": 3,
+    "key": "D minor",
+    "subtitle": null,
+    "year_composed": "1893–1896, rev. 1906",
+    "year_premiered": 1902,
+    "total_duration_min": 96.0,
+    "notes": "Longest symphony in the standard repertoire (~96 min). Mezzo-soprano soloist; women's & boys' choruses.",
+    "movements": [
+      {
+        "number": 1,
+        "label": null,
+        "tempo_marking": "Kräftig. Entschieden",
+        "duration_min": 33.0,
+        "voices": null,
+        "notes": "Longest single symphonic movement Mahler wrote. Summer marches in."
+      },
+      {
+        "number": 2,
+        "label": null,
+        "tempo_marking": "Tempo di Menuetto",
+        "duration_min": 10.0,
+        "voices": null,
+        "notes": "What the flowers of the meadow tell me."
+      },
+      {
+        "number": 3,
+        "label": null,
+        "tempo_marking": "Comodo. Scherzando. Ohne Hast",
+        "duration_min": 17.0,
+        "voices": null,
+        "notes": "What the animals of the forest tell me; posthorn solo offstage."
+      },
+      {
+        "number": 4,
+        "label": null,
+        "tempo_marking": "Sehr langsam. Misterioso",
+        "duration_min": 9.0,
+        "voices": "Mezzo-soprano",
+        "notes": "What man tells me; setting of Nietzsche's 'Mitternacht'."
+      },
+      {
+        "number": 5,
+        "label": null,
+        "tempo_marking": "Lustig im Tempo und keck im Ausdruck",
+        "duration_min": 4.0,
+        "voices": "Women's Chorus, Boys' Chorus",
+        "notes": "What the angels tell me; bells, chorus."
+      },
+      {
+        "number": 6,
+        "label": null,
+        "tempo_marking": "Langsam. Ruhevoll. Empfunden",
+        "duration_min": 23.0,
+        "voices": null,
+        "notes": "What love tells me; longest finale in Mahler."
+      }
+    ],
+    "instrumentation": [
+      {
+        "category": "Woodwind",
+        "instrument": "Piccolo",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Flute",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Oboe",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "English Horn",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Eb Clarinet",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Clarinet",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Bass Clarinet",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Bassoon",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Contrabassoon",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Horn",
+        "count": 8,
+        "notes": "4 offstage (mvt 3)"
+      },
+      {
+        "category": "Brass",
+        "instrument": "Trumpet",
+        "count": 6,
+        "notes": "4 offstage (mvt 1)"
+      },
+      {
+        "category": "Brass",
+        "instrument": "Trombone",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Contrabass Tuba",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Posthorn",
+        "count": 1,
+        "notes": "offstage (mvt 3); often played on flugelhorn"
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Timpani",
+        "count": 1,
+        "notes": "2 players"
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Bass Drum",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Snare Drum",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Cymbals",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Triangle",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Tam-tam",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Glockenspiel",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Bells",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Violin I",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Violin II",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Viola",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Cello",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Double Bass",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Harp",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "category": "Voice",
+        "instrument": "Mezzo-soprano",
+        "count": 1,
+        "notes": "soloist (mvt 4)"
+      },
+      {
+        "category": "Voice",
+        "instrument": "Women's Chorus",
+        "count": 1,
+        "notes": "(mvt 5)"
+      },
+      {
+        "category": "Voice",
+        "instrument": "Boys' Chorus",
+        "count": 1,
+        "notes": "(mvt 5); bells in hand"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "number": 4,
+    "key": "G major",
+    "subtitle": null,
+    "year_composed": "1899–1900, rev. 1901–10",
+    "year_premiered": 1901,
+    "total_duration_min": 56.0,
+    "notes": "Comparatively modest orchestration. Soprano soloist in finale. Scordatura solo violin in mvt 2.",
+    "movements": [
+      {
+        "number": 1,
+        "label": null,
+        "tempo_marking": "Bedächtig. Nicht eilen",
+        "duration_min": 17.0,
+        "voices": null,
+        "notes": "Sleigh bells open; classical in spirit."
+      },
+      {
+        "number": 2,
+        "label": null,
+        "tempo_marking": "In gemächlicher Bewegung. Ohne Hast",
+        "duration_min": 10.0,
+        "voices": null,
+        "notes": "Scherzo; scordatura violin ('Freund Hein')."
+      },
+      {
+        "number": 3,
+        "label": null,
+        "tempo_marking": "Ruhevoll",
+        "duration_min": 20.0,
+        "voices": null,
+        "notes": "Theme and variations; profound slow movement."
+      },
+      {
+        "number": 4,
+        "label": null,
+        "tempo_marking": "Sehr behaglich",
+        "duration_min": 9.0,
+        "voices": "Soprano",
+        "notes": "Das himmlische Leben (Wunderhorn); originally planned for Sym. 3."
+      }
+    ],
+    "instrumentation": [
+      {
+        "category": "Woodwind",
+        "instrument": "Piccolo",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Flute",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Oboe",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "English Horn",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Eb Clarinet",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Clarinet",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Bass Clarinet",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Bassoon",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Contrabassoon",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Horn",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Trumpet",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Trombone",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Tuba",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Timpani",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Bass Drum",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Snare Drum",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Cymbals",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Triangle",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Tam-tam",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Glockenspiel",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Bells",
+        "count": 1,
+        "notes": "sleigh bells (mvt 1)"
+      },
+      {
+        "category": "Strings",
+        "instrument": "Violin I",
+        "count": null,
+        "notes": "scordatura soloist in mvt 2"
+      },
+      {
+        "category": "Strings",
+        "instrument": "Violin II",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Viola",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Cello",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Double Bass",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Harp",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Voice",
+        "instrument": "Soprano",
+        "count": 1,
+        "notes": "soloist (mvt 4)"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "number": 5,
+    "key": "C-sharp minor",
+    "subtitle": null,
+    "year_composed": "1901–1902, rev. 1904–11",
+    "year_premiered": 1904,
+    "total_duration_min": 69.0,
+    "notes": "No voices. Structured in three parts (I–II, III, IV–V). Adagietto for strings and harp only.",
+    "movements": [
+      {
+        "number": 1,
+        "label": "Part I",
+        "tempo_marking": "Trauermarsch — In gemessenem Schritt. Streng. Wie ein Kondukt",
+        "duration_min": 12.0,
+        "voices": null,
+        "notes": "Funeral march; trumpet fanfare opens."
+      },
+      {
+        "number": 2,
+        "label": "Part I",
+        "tempo_marking": "Stürmisch bewegt, mit größter Vehemenz",
+        "duration_min": 15.0,
+        "voices": null,
+        "notes": "Raging, impassioned."
+      },
+      {
+        "number": 3,
+        "label": "Part II",
+        "tempo_marking": "Scherzo — Kräftig, nicht zu schnell",
+        "duration_min": 17.0,
+        "voices": null,
+        "notes": "Central pillar of the symphony; horn-dominated."
+      },
+      {
+        "number": 4,
+        "label": "Part III",
+        "tempo_marking": "Adagietto — Sehr langsam",
+        "duration_min": 10.0,
+        "voices": null,
+        "notes": "Strings and harp only; famously used in Visconti's 'Death in Venice'."
+      },
+      {
+        "number": 5,
+        "label": "Part III",
+        "tempo_marking": "Rondo-Finale — Allegro",
+        "duration_min": 15.0,
+        "voices": null,
+        "notes": "Contrapuntal brilliance; C major affirmation."
+      }
+    ],
+    "instrumentation": [
+      {
+        "category": "Woodwind",
+        "instrument": "Piccolo",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Flute",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Oboe",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "English Horn",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Eb Clarinet",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Clarinet",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Bass Clarinet",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Bassoon",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Contrabassoon",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Horn",
+        "count": 6,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Trumpet",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Trombone",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Bass Trombone",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Tuba",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Timpani",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Bass Drum",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Snare Drum",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Cymbals",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Triangle",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Tam-tam",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Glockenspiel",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Rute",
+        "count": 1,
+        "notes": "mvt 3 (birch switch on bass drum)"
+      },
+      {
+        "category": "Strings",
+        "instrument": "Violin I",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Violin II",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Viola",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Cello",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Double Bass",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Harp",
+        "count": 1,
+        "notes": "Adagietto: harp and strings only"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "number": 6,
+    "key": "A minor",
+    "subtitle": "Tragic",
+    "year_composed": "1903–1904, rev. 1906",
+    "year_premiered": 1906,
+    "total_duration_min": 79.0,
+    "notes": "No voices. Famous for three hammer blows in finale (later reduced to two). Debate over mvt 2/3 order (Scherzo vs Andante); entry follows Mahler's final revision.",
+    "movements": [
+      {
+        "number": 1,
+        "label": null,
+        "tempo_marking": "Allegro energico, ma non troppo. Heftig, aber markig",
+        "duration_min": 23.0,
+        "voices": null,
+        "notes": "A minor march; Alma theme in E major."
+      },
+      {
+        "number": 2,
+        "label": null,
+        "tempo_marking": "Scherzo — Wuchtig",
+        "duration_min": 12.0,
+        "voices": null,
+        "notes": "Placed second in Mahler's final revision (some conductors swap 2 & 3)."
+      },
+      {
+        "number": 3,
+        "label": null,
+        "tempo_marking": "Andante moderato",
+        "duration_min": 14.0,
+        "voices": null,
+        "notes": "Lyrical respite; E-flat major."
+      },
+      {
+        "number": 4,
+        "label": null,
+        "tempo_marking": "Finale — Allegro moderato",
+        "duration_min": 30.0,
+        "voices": null,
+        "notes": "Tragic hammer blows (originally 3, Mahler reduced to 2). Longest finale Mahler wrote."
+      }
+    ],
+    "instrumentation": [
+      {
+        "category": "Woodwind",
+        "instrument": "Piccolo",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Flute",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Oboe",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "English Horn",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Eb Clarinet",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Clarinet",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Bass Clarinet",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Bassoon",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Contrabassoon",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Horn",
+        "count": 8,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Trumpet",
+        "count": 6,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Trombone",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Bass Trombone",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Contrabass Tuba",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Timpani",
+        "count": 1,
+        "notes": "2 players"
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Bass Drum",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Snare Drum",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Cymbals",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Triangle",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Tam-tam",
+        "count": 2,
+        "notes": "high and low"
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Glockenspiel",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Xylophone",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Celesta",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Cowbells",
+        "count": 1,
+        "notes": "various pitches; some offstage"
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Hammer",
+        "count": 1,
+        "notes": "large wooden hammer (Finale); Mahler reduced from 3 to 2 blows"
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Deep Bells",
+        "count": 1,
+        "notes": "low-pitched, offstage"
+      },
+      {
+        "category": "Strings",
+        "instrument": "Violin I",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Violin II",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Viola",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Cello",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Double Bass",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Harp",
+        "count": 2,
+        "notes": null
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "number": 7,
+    "key": "E minor",
+    "subtitle": "Song of the Night",
+    "year_composed": "1904–1905, rev. 1909",
+    "year_premiered": 1908,
+    "total_duration_min": 79.0,
+    "notes": "No voices. Unique use of guitar and mandolin in Nachtmusik II. Two Tenorhorns (tenor tubas) in addition to standard brass.",
+    "movements": [
+      {
+        "number": 1,
+        "label": null,
+        "tempo_marking": "Langsam (Adagio) — Allegro risoluto, ma non troppo",
+        "duration_min": 20.0,
+        "voices": null,
+        "notes": "Tenor-horn call opens; broad arch."
+      },
+      {
+        "number": 2,
+        "label": "Nachtmusik I",
+        "tempo_marking": "Allegro moderato",
+        "duration_min": 17.0,
+        "voices": null,
+        "notes": "Night music; horn-dominated serenade."
+      },
+      {
+        "number": 3,
+        "label": null,
+        "tempo_marking": "Scherzo — Schattenhaft",
+        "duration_min": 10.0,
+        "voices": null,
+        "notes": "Shadow-like; eerie, fleet."
+      },
+      {
+        "number": 4,
+        "label": "Nachtmusik II",
+        "tempo_marking": "Andante amoroso",
+        "duration_min": 14.0,
+        "voices": null,
+        "notes": "Guitar and mandolin prominent; intimate serenade."
+      },
+      {
+        "number": 5,
+        "label": null,
+        "tempo_marking": "Rondo-Finale — Allegro ordinario",
+        "duration_min": 18.0,
+        "voices": null,
+        "notes": "C major daybreak; sometimes criticised as enigmatically bright after dark movements."
+      }
+    ],
+    "instrumentation": [
+      {
+        "category": "Woodwind",
+        "instrument": "Piccolo",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Flute",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Oboe",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "English Horn",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Eb Clarinet",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Clarinet",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Bass Clarinet",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Bassoon",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Contrabassoon",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Horn",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Trumpet",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Trombone",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Bass Trombone",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Tenor Tuba",
+        "count": 2,
+        "notes": "Tenorhorns / Wagner tubas (mvts 1 & 2)"
+      },
+      {
+        "category": "Brass",
+        "instrument": "Contrabass Tuba",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Timpani",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Bass Drum",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Snare Drum",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Cymbals",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Triangle",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Tam-tam",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Glockenspiel",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Cowbells",
+        "count": 1,
+        "notes": "various pitches"
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Deep Bells",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Violin I",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Violin II",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Viola",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Cello",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Double Bass",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Harp",
+        "count": 2,
+        "notes": null
+      },
+      {
+        "category": "Plucked",
+        "instrument": "Guitar",
+        "count": 1,
+        "notes": "Nachtmusik II"
+      },
+      {
+        "category": "Plucked",
+        "instrument": "Mandolin",
+        "count": 1,
+        "notes": "Nachtmusik II"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "number": 8,
+    "key": "E-flat major",
+    "subtitle": "Symphony of a Thousand",
+    "year_composed": "1906",
+    "year_premiered": 1910,
+    "total_duration_min": 83.0,
+    "notes": "Eight soloists, two large mixed choruses, boys' chorus. Part I: Veni Creator Spiritus. Part II: Final scene from Goethe's Faust.",
+    "movements": [
+      {
+        "number": 1,
+        "label": "Part I",
+        "tempo_marking": "Veni Creator Spiritus — Allegro impetuoso",
+        "duration_min": 23.0,
+        "voices": "3 Sopranos, 2 Mezzo-sopranos, Tenor, Baritone, Bass-baritone, 2 Mixed Choruses, Boys' Chorus",
+        "notes": "Latin hymn by Hrabanus Maurus (9th c.). Dense double-fugue."
+      },
+      {
+        "number": 2,
+        "label": "Part II",
+        "tempo_marking": "Poco adagio — Andante — Chorus mysticus",
+        "duration_min": 60.0,
+        "voices": "3 Sopranos, 2 Mezzo-sopranos, Tenor, Baritone, Bass-baritone, 2 Mixed Choruses, Boys' Chorus",
+        "notes": "Goethe, Faust II, final scene. Through-composed; multiple tempos."
+      }
+    ],
+    "instrumentation": [
+      {
+        "category": "Woodwind",
+        "instrument": "Piccolo",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Flute",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Oboe",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "English Horn",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Eb Clarinet",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Clarinet",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Bass Clarinet",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Bassoon",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Contrabassoon",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Horn",
+        "count": 8,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Trumpet",
+        "count": 8,
+        "notes": "4 offstage"
+      },
+      {
+        "category": "Brass",
+        "instrument": "Trombone",
+        "count": 7,
+        "notes": "4 offstage"
+      },
+      {
+        "category": "Brass",
+        "instrument": "Contrabass Tuba",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Timpani",
+        "count": 1,
+        "notes": "2 players"
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Bass Drum",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Snare Drum",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Cymbals",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Triangle",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Tam-tam",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Glockenspiel",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Celesta",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Bells",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Keyboard",
+        "instrument": "Piano",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Keyboard",
+        "instrument": "Organ",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Keyboard",
+        "instrument": "Harmonium",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Violin I",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Violin II",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Viola",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Cello",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Double Bass",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Harp",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Voice",
+        "instrument": "Soprano",
+        "count": 3,
+        "notes": "soloists"
+      },
+      {
+        "category": "Voice",
+        "instrument": "Mezzo-soprano",
+        "count": 2,
+        "notes": "soloists"
+      },
+      {
+        "category": "Voice",
+        "instrument": "Tenor",
+        "count": 1,
+        "notes": "soloist"
+      },
+      {
+        "category": "Voice",
+        "instrument": "Baritone",
+        "count": 1,
+        "notes": "soloist"
+      },
+      {
+        "category": "Voice",
+        "instrument": "Bass-baritone",
+        "count": 1,
+        "notes": "soloist"
+      },
+      {
+        "category": "Voice",
+        "instrument": "Mixed Chorus",
+        "count": 2,
+        "notes": "two large SATB choruses"
+      },
+      {
+        "category": "Voice",
+        "instrument": "Boys' Chorus",
+        "count": 1,
+        "notes": null
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "number": 9,
+    "key": "D major",
+    "subtitle": null,
+    "year_composed": "1908–1909",
+    "year_premiered": 1912,
+    "total_duration_min": 78.0,
+    "notes": "No voices. Last symphony Mahler completed. Posthumous premiere (Bruno Walter).",
+    "movements": [
+      {
+        "number": 1,
+        "label": null,
+        "tempo_marking": "Andante comodo",
+        "duration_min": 27.0,
+        "voices": null,
+        "notes": "D major/minor; 'farewell' character; asymmetric phrasing."
+      },
+      {
+        "number": 2,
+        "label": null,
+        "tempo_marking": "Im Tempo eines gemächlichen Ländlers. Etwas täppisch und sehr derb",
+        "duration_min": 16.0,
+        "voices": null,
+        "notes": "Three dance types juxtaposed (Ländler, waltz, minuet)."
+      },
+      {
+        "number": 3,
+        "label": null,
+        "tempo_marking": "Rondo-Burleske — Allegro assai. Sehr trotzig",
+        "duration_min": 11.0,
+        "voices": null,
+        "notes": "Savage counterpoint; 'To my brothers in Apollo' (Mahler's note)."
+      },
+      {
+        "number": 4,
+        "label": null,
+        "tempo_marking": "Adagio — Sehr langsam und noch zurückhaltend",
+        "duration_min": 24.0,
+        "voices": null,
+        "notes": "D-flat major valediction; dissolves into silence."
+      }
+    ],
+    "instrumentation": [
+      {
+        "category": "Woodwind",
+        "instrument": "Piccolo",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Flute",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Oboe",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "English Horn",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Eb Clarinet",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Clarinet",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Bass Clarinet",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Bassoon",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Contrabassoon",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Horn",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Trumpet",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Trombone",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Bass Trombone",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Contrabass Tuba",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Timpani",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Bass Drum",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Snare Drum",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Cymbals",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Triangle",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Tam-tam",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Glockenspiel",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Celesta",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Cowbells",
+        "count": 1,
+        "notes": "mvt 2"
+      },
+      {
+        "category": "Strings",
+        "instrument": "Violin I",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Violin II",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Viola",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Cello",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Double Bass",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Harp",
+        "count": 2,
+        "notes": null
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "number": 10,
+    "key": "F-sharp major",
+    "subtitle": null,
+    "year_composed": "1910 (unfinished)",
+    "year_premiered": null,
+    "total_duration_min": 80.0,
+    "notes": "Only the Adagio was fully orchestrated by Mahler. Movement timings reflect the Deryck Cooke performing edition (1976). Other completions by Carpenter, Mazzetti, Samale–Cohrs–Voss, Wheeler.",
+    "movements": [
+      {
+        "number": 1,
+        "label": null,
+        "tempo_marking": "Adagio — Andante",
+        "duration_min": 25.0,
+        "voices": null,
+        "notes": "Only movement fully orchestrated by Mahler. F-sharp major."
+      },
+      {
+        "number": 2,
+        "label": "Scherzo I",
+        "tempo_marking": "Scherzo — Schnelle Viertel",
+        "duration_min": 12.0,
+        "voices": null,
+        "notes": "Cooke completion. Demonic energy."
+      },
+      {
+        "number": 3,
+        "label": "Purgatorio",
+        "tempo_marking": "Allegretto moderato",
+        "duration_min": 4.0,
+        "voices": null,
+        "notes": "Short intermezzo; B-flat minor."
+      },
+      {
+        "number": 4,
+        "label": "Scherzo II",
+        "tempo_marking": "Allegro pesante",
+        "duration_min": 14.0,
+        "voices": null,
+        "notes": "Cooke completion. Drum stroke motive."
+      },
+      {
+        "number": 5,
+        "label": null,
+        "tempo_marking": "Finale — Langsam, Adagio",
+        "duration_min": 25.0,
+        "voices": null,
+        "notes": "Cooke completion. Returns to Adagio material; F-sharp major resolution."
+      }
+    ],
+    "instrumentation": [
+      {
+        "category": "Woodwind",
+        "instrument": "Piccolo",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Flute",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Oboe",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "English Horn",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Eb Clarinet",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Clarinet",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Bass Clarinet",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Bassoon",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Woodwind",
+        "instrument": "Contrabassoon",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Horn",
+        "count": 4,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Trumpet",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Trombone",
+        "count": 3,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Bass Trombone",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Brass",
+        "instrument": "Contrabass Tuba",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Timpani",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Bass Drum",
+        "count": 1,
+        "notes": "single stroke in Finale (mvt 5)"
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Snare Drum",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Cymbals",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Tam-tam",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Percussion",
+        "instrument": "Cowbells",
+        "count": 1,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Violin I",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Violin II",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Viola",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Cello",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Double Bass",
+        "count": null,
+        "notes": null
+      },
+      {
+        "category": "Strings",
+        "instrument": "Harp",
+        "count": 2,
+        "notes": null
+      }
+    ]
+  }
+]
